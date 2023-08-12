@@ -54,7 +54,7 @@ ARG PHP_MEMORY_LIMIT
 
 # PHP
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-RUN pecl install xdebug-3.1.6
+RUN pecl install xdebug-3.2.0
 RUN docker-php-ext-install pcntl
 RUN docker-php-ext-install posix
 

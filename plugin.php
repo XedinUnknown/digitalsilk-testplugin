@@ -12,6 +12,8 @@
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: me-plugin
  * Domain Path: /languages
+ * Requires at least: 6.0
+ * Requires PHP: 7.4
  */
 
 use Dhii\Container\Dictionary;

@@ -3,9 +3,10 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Me\Plugin\" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/core/src" isTestSource="false" packagePrefix="Me\Plugin\Core\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/phpunit" isTestSource="true" packagePrefix="Me\Plugin\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/phpunit/Func" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/demo/src" isTestSource="false" packagePrefix="Me\Plugin\Demo\" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/demo/tests/phpunit" isTestSource="true" packagePrefix="Me\Plugin\Demo\Test\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
