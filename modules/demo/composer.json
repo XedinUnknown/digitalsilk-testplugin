@@ -1,0 +1,29 @@
+{
+  "name": "me/plugin-demo",
+  "description": "Demonstrates how a module may be added.",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton Ukhanev",
+      "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2 | ^8.0",
+    "dhii/module-interface": "^0.3-alpha1",
+    "dhii/containers": "^0.1",
+    "dhii/services": "^0.1.1-alpha3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Me\\Plugin\\Demo\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Me\\Plugin\\Demo\\Test\\": "tests/phpunit"
+    }
+  }
+}

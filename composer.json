@@ -1,0 +1,55 @@
+{
+  "name": "wp-oop/plugin-boilerplate",
+  "description": "A project skeleton useful for starting a new WordPress plugin",
+  "minimum-stability": "dev",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Anton Ukhanev",
+      "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2 | ^8.0",
+    "dhii/module-interface": "^0.3-alpha1",
+    "psr/container": "^1.0",
+    "dhii/versions": "^0.1.0-alpha2",
+    "dhii/containers": "^0.1.4-alpha2",
+    "dhii/services": "^0.1.1-alpha3",
+    "wp-oop/wordpress-interface": "^0.1.0-alpha1",
+    "wikimedia/composer-merge-plugin": "^2.0.1",
+    "symfony/polyfill-php80": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0 | ^8.0 | ^9.0",
+    "brain/monkey": "^2.6",
+    "vimeo/psalm": "^3.11.7 | ^4.0",
+    "slevomat/coding-standard": "^6.0",
+    "webmozart/path-util": "^2.3@stable",
+    "php-stubs/wordpress-stubs": "^5.0@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "Me\\Plugin\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Me\\Plugin\\Test\\": "tests/phpunit"
+    }
+  },
+  "extra": {
+    "merge-plugin": {
+      "include": [
+        "modules/*/composer.json"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "wikimedia/composer-merge-plugin": true
+    }
+  }
+}
