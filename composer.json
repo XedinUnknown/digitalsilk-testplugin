@@ -27,7 +27,8 @@
     "vimeo/psalm": "^4.0 | ^5.0",
     "slevomat/coding-standard": "^6.0",
     "webmozart/path-util": "^2.3@stable",
-    "php-stubs/wordpress-stubs": "^6.0@stable"
+    "php-stubs/wordpress-stubs": "^6.0@stable",
+    "wpackagist-plugin/woocommerce": "7.9.0"
   },
   "autoload": {
     "psr-4": {
@@ -39,17 +40,33 @@
       "DigitalSilk\\TestPlugin\\Test\\": "tests/phpunit"
     }
   },
+  "repositories":[
+    {
+      "type":"composer",
+      "url":"https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  ],
   "extra": {
     "merge-plugin": {
       "include": [
         "modules/*/composer.json"
+      ]
+    },
+    "installer-paths": {
+      "vendor/{$vendor}/{$name}/": [
+        "wpackagist-plugin/woocommerce"
       ]
     }
   },
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "wikimedia/composer-merge-plugin": true
+      "wikimedia/composer-merge-plugin": true,
+      "composer/installers": true
     }
   }
 }

@@ -13,9 +13,11 @@ if wait-for-it.sh "${WORDPRESS_DB_HOST}" -t 60; then
     --skip-email
   wp plugin is-installed akismet --allow-root && wp plugin uninstall akismet --allow-root --path="${DOCROOT_PATH}"
   wp plugin is-installed hello --allow-root && wp plugin uninstall hello --allow-root --path="${DOCROOT_PATH}"
+  wp plugin install woocommerce --version="${WC_VERSION}" --activate --allow-root --path="${DOCROOT_PATH}"
   wp plugin activate "${PLUGIN_NAME}" --allow-root --path="${DOCROOT_PATH}"
 
   # Custom setup instructions
+  wp theme install storefront --version="4.5.2" --activate --allow-root --path="${DOCROOT_PATH}"
 fi
 
 exec "$@"
