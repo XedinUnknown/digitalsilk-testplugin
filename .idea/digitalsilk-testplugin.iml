@@ -5,10 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="DigitalSilk\TestPlugin\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\TestPlugin\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/phpunit/Func" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/demo/src" isTestSource="false" packagePrefix="DigitalSilk\TestPlugin\Demo\" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/demo/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\TestPlugin\Demo\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/src" isTestSource="false" packagePrefix="DigitalSilk\TestPlugin\Demo\" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\TestPlugin\Demo\Test\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

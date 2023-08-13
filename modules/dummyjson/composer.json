@@ -1,0 +1,29 @@
+{
+  "name": "digitalsilk/dummyjson-sdk",
+  "description": "An SDK for DummyJSON",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton Ukhanev",
+      "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4 | ^8.0",
+    "dhii/module-interface": "^0.3-alpha1",
+    "dhii/containers": "^0.1",
+    "dhii/services": "^0.1.1-alpha3"
+  },
+  "autoload": {
+    "psr-4": {
+      "DigitalSilk\\DummyJson\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DigitalSilk\\DummyJson\\Test\\": "tests/phpunit"
+    }
+  }
+}
