@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin\Test;
+namespace DigitalSilk\TestPlugin\Test;
 
 use Dhii\Container\ServiceProvider;
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface;

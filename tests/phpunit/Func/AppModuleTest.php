@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin\Test\Func;
+namespace DigitalSilk\TestPlugin\Test\Func;
 
-use Me\Plugin\Test\PluginFunctionMocks;
+use DigitalSilk\TestPlugin\Test\PluginFunctionMocks;
 use Psr\Container\ContainerInterface;
-use Me\Plugin\Test\AbstractApplicationTestCase;
+use DigitalSilk\TestPlugin\Test\AbstractApplicationTestCase;
 
 class AppModuleTest extends AbstractApplicationTestCase
 {

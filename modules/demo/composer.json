@@ -1,5 +1,5 @@
 {
-  "name": "me/plugin-demo",
+  "name": "digitalsilk/testplugin-demo",
   "description": "Demonstrates how a module may be added.",
   "minimum-stability": "dev",
   "license": "MIT",
@@ -18,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Me\\Plugin\\Demo\\": "src"
+      "DigitalSilk\\TestPlugin\\Demo\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Me\\Plugin\\Demo\\Test\\": "tests/phpunit"
+      "DigitalSilk\\TestPlugin\\Demo\\Test\\": "tests/phpunit"
     }
   }
 }

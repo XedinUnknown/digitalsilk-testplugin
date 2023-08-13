@@ -1,6 +1,6 @@
 <?php
 
-namespace Me\Plugin\Test;
+namespace DigitalSilk\TestPlugin\Test;
 
 use function Brain\Monkey\Functions\when;
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a685a0d5612d2751a53029798301527",
+    "content-hash": "cbc92c97bd2b911a494f0078cdbefdd6",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -993,80 +993,6 @@
             "time": "2023-05-01T16:33:47+00:00"
         },
         {
-            "name": "composer/package-versions-deprecated",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/package-versions-deprecated.git",
-                "reference": "b4f54f74ef3453349c24a845d22392cd31e65f1d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/b4f54f74ef3453349c24a845d22392cd31e65f1d",
-                "reference": "b4f54f74ef3453349c24a845d22392cd31e65f1d",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1.0 || ^2.0",
-                "php": "^7 || ^8"
-            },
-            "replace": {
-                "ocramius/package-versions": "1.11.99"
-            },
-            "require-dev": {
-                "composer/composer": "^1.9.3 || ^2.0@dev",
-                "ext-zip": "^1.13",
-                "phpunit/phpunit": "^6.5 || ^7"
-            },
-            "default-branch": true,
-            "type": "composer-plugin",
-            "extra": {
-                "class": "PackageVersions\\Installer",
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PackageVersions\\": "src/PackageVersions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "support": {
-                "issues": "https://github.com/composer/package-versions-deprecated/issues",
-                "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.5"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-01-17T14:14:24+00:00"
-        },
-        {
             "name": "composer/pcre",
             "version": "dev-main",
             "source": {
@@ -1571,6 +1497,67 @@
             "time": "2022-06-19T17:15:06+00:00"
         },
         {
+            "name": "fidry/cpu-core-counter",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theofidry/cpu-core-counter.git",
+                "reference": "b58e5a3933e541dc286cc91fc4f3898bbc6f1623"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/b58e5a3933e541dc286cc91fc4f3898bbc6f1623",
+                "reference": "b58e5a3933e541dc286cc91fc4f3898bbc6f1623",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "fidry/makefile": "^0.2.0",
+                "phpstan/extension-installer": "^1.2.0",
+                "phpstan/phpstan": "^1.9.2",
+                "phpstan/phpstan-deprecation-rules": "^1.0.0",
+                "phpstan/phpstan-phpunit": "^1.2.2",
+                "phpstan/phpstan-strict-rules": "^1.4.4",
+                "phpunit/phpunit": "^9.5.26 || ^8.5.31",
+                "theofidry/php-cs-fixer-config": "^1.0",
+                "webmozarts/strict-phpunit": "^7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fidry\\CpuCoreCounter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Théo FIDRY",
+                    "email": "theo.fidry@gmail.com"
+                }
+            ],
+            "description": "Tiny utility to get the number of CPU cores.",
+            "keywords": [
+                "CPU",
+                "core"
+            ],
+            "support": {
+                "issues": "https://github.com/theofidry/cpu-core-counter/issues",
+                "source": "https://github.com/theofidry/cpu-core-counter/tree/0.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/theofidry",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-12-24T12:35:10+00:00"
+        },
+        {
             "name": "hamcrest/hamcrest-php",
             "version": "dev-master",
             "source": {
@@ -1878,59 +1865,6 @@
             "time": "2023-07-30T21:38:32+00:00"
         },
         {
-            "name": "openlss/lib-array2xml",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nullivex/lib-array2xml.git",
-                "reference": "a91f18a8dfc69ffabe5f9b068bc39bb202c81d90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nullivex/lib-array2xml/zipball/a91f18a8dfc69ffabe5f9b068bc39bb202c81d90",
-                "reference": "a91f18a8dfc69ffabe5f9b068bc39bb202c81d90",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "LSS": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Bryan Tong",
-                    "email": "bryan@nullivex.com",
-                    "homepage": "https://www.nullivex.com"
-                },
-                {
-                    "name": "Tony Butler",
-                    "email": "spudz76@gmail.com",
-                    "homepage": "https://www.nullivex.com"
-                }
-            ],
-            "description": "Array2XML conversion library credit to lalit.org",
-            "homepage": "https://www.nullivex.com",
-            "keywords": [
-                "array",
-                "array conversion",
-                "xml",
-                "xml conversion"
-            ],
-            "support": {
-                "issues": "https://github.com/nullivex/lib-array2xml/issues",
-                "source": "https://github.com/nullivex/lib-array2xml/tree/master"
-            },
-            "time": "2019-03-29T20:06:56+00:00"
-        },
-        {
             "name": "phar-io/manifest",
             "version": "dev-master",
             "source": {
@@ -2051,21 +1985,21 @@
         },
         {
             "name": "php-stubs/wordpress-stubs",
-            "version": "v5.9.6",
+            "version": "v6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-stubs/wordpress-stubs.git",
-                "reference": "6a18d938d0aef39d091505a4a35b025fb6c10098"
+                "reference": "adda7609e71d5f4dc7b87c74f8ec9e3437d2e92c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/6a18d938d0aef39d091505a4a35b025fb6c10098",
-                "reference": "6a18d938d0aef39d091505a4a35b025fb6c10098",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/adda7609e71d5f4dc7b87c74f8ec9e3437d2e92c",
+                "reference": "adda7609e71d5f4dc7b87c74f8ec9e3437d2e92c",
                 "shasum": ""
             },
             "require-dev": {
-                "nikic/php-parser": "< 4.12.0",
-                "php": "~7.3 || ~8.0",
+                "nikic/php-parser": "^4.13",
+                "php": "^7.4 || ~8.0.0",
                 "php-stubs/generator": "^0.8.3",
                 "phpdocumentor/reflection-docblock": "^5.3",
                 "phpstan/phpstan": "^1.10.12",
@@ -2073,7 +2007,6 @@
             },
             "suggest": {
                 "paragonie/sodium_compat": "Pure PHP implementation of libsodium",
-                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
                 "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
             },
             "type": "library",
@@ -2090,9 +2023,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-stubs/wordpress-stubs/issues",
-                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v5.9.6"
+                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.3.0"
             },
-            "time": "2023-05-18T04:34:27+00:00"
+            "time": "2023-08-10T16:34:11+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3810,6 +3743,70 @@
             "time": "2020-10-05T12:39:37+00:00"
         },
         {
+            "name": "spatie/array-to-xml",
+            "version": "v2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/array-to-xml.git",
+                "reference": "ea4881f7b6f33fe1d685efad3d419a519dca9d95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/ea4881f7b6f33fe1d685efad3d419a519dca9d95",
+                "reference": "ea4881f7b6f33fe1d685efad3d419a519dca9d95",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "pestphp/pest": "^1.21",
+                "phpunit/phpunit": "^9.0",
+                "spatie/pest-plugin-snapshots": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ArrayToXml\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://freek.dev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Convert an array to xml",
+            "homepage": "https://github.com/spatie/array-to-xml",
+            "keywords": [
+                "array",
+                "convert",
+                "xml"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/array-to-xml/tree/v2"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-04-25T11:18:36+00:00"
+        },
+        {
             "name": "squizlabs/php_codesniffer",
             "version": "dev-master",
             "source": {
@@ -4032,6 +4029,70 @@
                 }
             ],
             "time": "2023-01-24T14:02:46+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "5.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "0ce3a62c9579a53358d3a7eb6b3dfb79789a6364"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/0ce3a62c9579a53358d3a7eb6b3dfb79789a6364",
+                "reference": "0ce3a62c9579a53358d3a7eb6b3dfb79789a6364",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.8",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides basic utilities for the filesystem",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/filesystem/tree/5.4"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-05-31T13:04:02+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -4668,24 +4729,24 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "4.x-dev",
+            "version": "5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "f630a0dc399170e5c7e8bd57ee28c2f5d01505e6"
+                "reference": "a645331026787b124a86629f821e1685fc4db247"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/f630a0dc399170e5c7e8bd57ee28c2f5d01505e6",
-                "reference": "f630a0dc399170e5c7e8bd57ee28c2f5d01505e6",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/a645331026787b124a86629f821e1685fc4db247",
+                "reference": "a645331026787b124a86629f821e1685fc4db247",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "^2.4.2",
                 "amphp/byte-stream": "^1.5",
-                "composer/package-versions-deprecated": "^1.8.0",
+                "composer-runtime-api": "^2",
                 "composer/semver": "^1.4 || ^2.0 || ^3.0",
-                "composer/xdebug-handler": "^1.1 || ^2.0 || ^3.0",
+                "composer/xdebug-handler": "^2.0 || ^3.0",
                 "dnoegel/php-xdg-base-dir": "^0.1.1",
                 "ext-ctype": "*",
                 "ext-dom": "*",
@@ -4694,35 +4755,35 @@
                 "ext-mbstring": "*",
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
-                "felixfbecker/advanced-json-rpc": "^3.0.3",
-                "felixfbecker/language-server-protocol": "^1.5",
+                "felixfbecker/advanced-json-rpc": "^3.1",
+                "felixfbecker/language-server-protocol": "^1.5.2",
+                "fidry/cpu-core-counter": "^0.4.1 || ^0.5.1",
                 "netresearch/jsonmapper": "^1.0 || ^2.0 || ^3.0 || ^4.0",
-                "nikic/php-parser": "^4.13",
-                "openlss/lib-array2xml": "^1.0",
-                "php": "^7.1|^8",
-                "sebastian/diff": "^3.0 || ^4.0",
-                "symfony/console": "^3.4.17 || ^4.1.6 || ^5.0 || ^6.0",
-                "symfony/polyfill-php80": "^1.25",
-                "webmozart/path-util": "^2.3"
+                "nikic/php-parser": "^4.16",
+                "php": "^7.4 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
+                "sebastian/diff": "^4.0 || ^5.0",
+                "spatie/array-to-xml": "^2.17.0 || ^3.0",
+                "symfony/console": "^4.1.6 || ^5.0 || ^6.0",
+                "symfony/filesystem": "^5.4 || ^6.0"
             },
             "provide": {
                 "psalm/psalm": "self.version"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.2",
-                "brianium/paratest": "^4.0||^6.0",
+                "amphp/phpunit-util": "^2.0",
+                "bamarni/composer-bin-plugin": "^1.4",
+                "brianium/paratest": "^6.9",
                 "ext-curl": "*",
+                "mockery/mockery": "^1.5",
+                "nunomaduro/mock-final-classes": "^1.1",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
-                "phpdocumentor/reflection-docblock": "^5",
-                "phpmyadmin/sql-parser": "5.1.0||dev-master",
-                "phpspec/prophecy": ">=1.9.0",
-                "phpstan/phpdoc-parser": "1.2.* || 1.6.4",
-                "phpunit/phpunit": "^9.0",
-                "psalm/plugin-phpunit": "^0.16",
-                "slevomat/coding-standard": "^7.0",
-                "squizlabs/php_codesniffer": "^3.5",
-                "symfony/process": "^4.3 || ^5.0 || ^6.0",
-                "weirdan/prophecy-shim": "^1.0 || ^2.0"
+                "phpstan/phpdoc-parser": "^1.6",
+                "phpunit/phpunit": "^9.6",
+                "psalm/plugin-mockery": "^1.1",
+                "psalm/plugin-phpunit": "^0.18",
+                "slevomat/coding-standard": "^8.4",
+                "squizlabs/php_codesniffer": "^3.6",
+                "symfony/process": "^4.4 || ^5.0 || ^6.0"
             },
             "suggest": {
                 "ext-curl": "In order to send data to shepherd",
@@ -4739,17 +4800,14 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.x-dev",
+                    "dev-master": "5.x-dev",
+                    "dev-4.x": "4.x-dev",
                     "dev-3.x": "3.x-dev",
                     "dev-2.x": "2.x-dev",
                     "dev-1.x": "1.x-dev"
                 }
             },
             "autoload": {
-                "files": [
-                    "src/functions.php",
-                    "src/spl_object_id.php"
-                ],
                 "psr-4": {
                     "Psalm\\": "src/Psalm/"
                 }
@@ -4767,13 +4825,14 @@
             "keywords": [
                 "code",
                 "inspection",
-                "php"
+                "php",
+                "static analysis"
             ],
             "support": {
                 "issues": "https://github.com/vimeo/psalm/issues",
-                "source": "https://github.com/vimeo/psalm/tree/4.x"
+                "source": "https://github.com/vimeo/psalm/tree/5.x"
             },
-            "time": "2022-11-07T12:23:42+00:00"
+            "time": "2023-08-13T04:03:45+00:00"
         },
         {
             "name": "webmozart/assert",

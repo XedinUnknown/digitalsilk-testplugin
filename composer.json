@@ -1,6 +1,6 @@
 {
-  "name": "wp-oop/plugin-boilerplate",
-  "description": "A project skeleton useful for starting a new WordPress plugin",
+  "name": "xedinunknown/digitalsilk-testplugin",
+  "description": "A WordPress plugin, intended to pass a DigitalSilk test.",
   "minimum-stability": "dev",
   "license": "GPL-2.0-or-later",
   "authors": [
@@ -31,12 +31,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Me\\Plugin\\": "src"
+      "DigitalSilk\\TestPlugin\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Me\\Plugin\\Test\\": "tests/phpunit"
+      "DigitalSilk\\TestPlugin\\Test\\": "tests/phpunit"
     }
   },
   "extra": {

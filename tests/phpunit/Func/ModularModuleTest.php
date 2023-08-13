@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin\Test\Func;
+namespace DigitalSilk\TestPlugin\Test\Func;
 
 use Dhii\Container\DelegatingContainer;
 use Dhii\Modular\Module\ModuleInterface;
 use Interop\Container\ServiceProviderInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Me\Plugin\ModularModule as Subject;
+use DigitalSilk\TestPlugin\ModularModule as Subject;
 use Psr\Container\ContainerInterface;
 
 class ModularModuleTest extends TestCase

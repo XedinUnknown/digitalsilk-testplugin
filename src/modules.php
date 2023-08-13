@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Me\Plugin\Demo\DemoModule;
+use DigitalSilk\TestPlugin\Demo\DemoModule;
 
 return function (string $rootDir, string $mainFile): iterable {
     $modules = [

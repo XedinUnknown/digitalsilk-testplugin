@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Me\Plugin\Demo\Test\Func;
+namespace DigitalSilk\TestPlugin\Demo\Test\Func;
 
 use Dhii\Services\Factories\Value;
-use Me\Plugin\Test\AbstractModularTestCase;
-use Me\Plugin\Demo\DemoModule as Subject;
+use DigitalSilk\TestPlugin\Test\AbstractModularTestCase;
+use DigitalSilk\TestPlugin\Demo\DemoModule as Subject;
 
 class DemoModuleTest extends AbstractModularTestCase
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin\Test;
+namespace DigitalSilk\TestPlugin\Test;
 
 use Psr\Container\ContainerInterface;
 use Dhii\Modular\Module\Exception\ModuleExceptionInterface;
-use Me\Plugin\MainModule;
+use DigitalSilk\TestPlugin\MainModule;
 use RuntimeException;
 
 /**

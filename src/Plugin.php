@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin;
+namespace DigitalSilk\TestPlugin;
 
 use Dhii\Package\Version\VersionInterface;
 use WpOop\WordPress\Plugin\PluginInterface;

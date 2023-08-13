@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin\Test\Func;
+namespace DigitalSilk\TestPlugin\Test\Func;
 
 use Dhii\Services\Factories\Value;
-use Me\Plugin\Plugin;
-use Me\Plugin\Test\PluginFunctionMocks;
+use DigitalSilk\TestPlugin\Plugin;
+use DigitalSilk\TestPlugin\Test\PluginFunctionMocks;
 use Psr\Container\ContainerInterface;
-use Me\Plugin\MainModule as Subject;
-use Me\Plugin\Test\AbstractModularTestCase;
+use DigitalSilk\TestPlugin\MainModule as Subject;
+use DigitalSilk\TestPlugin\Test\AbstractModularTestCase;
 
 use function Brain\Monkey\Functions\when;
 

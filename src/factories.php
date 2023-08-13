@@ -6,7 +6,7 @@ use Dhii\Package\Version\StringVersionFactoryInterface;
 use Dhii\Services\Factories\Alias;
 use Dhii\Services\Factory;
 use Dhii\Versions\StringVersionFactory;
-use Me\Plugin\FilePathPluginFactory;
+use DigitalSilk\TestPlugin\FilePathPluginFactory;
 use WpOop\WordPress\Plugin\FilePathPluginFactoryInterface;
 use WpOop\WordPress\Plugin\PluginInterface;
 

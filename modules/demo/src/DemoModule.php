@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Me\Plugin\Demo;
+namespace DigitalSilk\TestPlugin\Demo;
 
 use Dhii\Container\ServiceProvider;
 use Dhii\Modular\Module\ModuleInterface;

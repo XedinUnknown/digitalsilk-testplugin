@@ -20,7 +20,7 @@ use Dhii\Container\Dictionary;
 use Dhii\Modular\Module\ModuleInterface;
 use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
-use Me\Plugin\MainModule;
+use DigitalSilk\TestPlugin\MainModule;
 
 (function (string $mainFile, string $wpRootDir): void {
     $baseDir = dirname($mainFile);
