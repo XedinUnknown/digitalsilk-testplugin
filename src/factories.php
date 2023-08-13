@@ -33,10 +33,5 @@ return function (): array {
         #####################################################
         # Module Wiring
         #####################################################
-        'me/plugin/demo/plugin_title' => new Factory([
-            'me/plugin/plugin',
-        ], function (PluginInterface $plugin) {
-            return $plugin->getTitle();
-        }),
     ];
 };

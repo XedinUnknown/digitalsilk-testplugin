@@ -20,7 +20,7 @@
     hideExternalErrors="true"
     allowFileIncludes="true"
 >
-    <projectFiles>
+    <projectFiles allowMissingFiles="true">
         <directory name="src"/>
         <directory name="modules/**/src"/>
     </projectFiles>
