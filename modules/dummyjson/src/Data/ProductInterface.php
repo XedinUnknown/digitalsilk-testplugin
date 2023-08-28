@@ -10,6 +10,20 @@ use Psr\Http\Message\UriInterface;
  * Represents a Product.
  *
  * @link https://dummyjson.com/docs/products
+ *
+ * @psalm-type ProductData = array{
+ *        id: positive-int,
+ *        title: string,
+ *        description: string,
+ *        price: float,
+ *        discountPercentage: float,
+ *        rating: float,
+ *        stock: int,
+ *        brand: string,
+ *        category: string,
+ *        thumbnail: string,
+ *        images: array<string>
+ *    }
  */
 interface ProductInterface
 {
