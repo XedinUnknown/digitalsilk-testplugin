@@ -40,7 +40,7 @@
       "DigitalSilk\\TestPlugin\\Test\\": "tests/phpunit"
     }
   },
-  "repositories":[
+  "repositories": [
     {
       "type":"composer",
       "url":"https://wpackagist.org",
