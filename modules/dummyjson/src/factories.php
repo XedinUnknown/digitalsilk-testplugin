@@ -10,8 +10,12 @@ use DigitalSilk\DummyJson\Codec\JsonMachineDecoder;
 use DigitalSilk\DummyJson\Codec\JsonStreamingEncoder;
 use DigitalSilk\DummyJson\Codec\StreamingDecoderInterface;
 use DigitalSilk\DummyJson\Codec\StreamingEncoderInterface;
+use DigitalSilk\DummyJson\Command\ApiListProductsCommand;
+use DigitalSilk\DummyJson\Command\ListProductsCommandInterface;
 use DigitalSilk\DummyJson\Http\ApiClient;
 use DigitalSilk\DummyJson\Http\ApiClientInterface;
+use DigitalSilk\DummyJson\Transform\ProductHydrator;
+use DigitalSilk\DummyJson\Transform\TransformerInterface;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -77,5 +81,17 @@ return function (string $modDir): array {
 
             return $apiClient;
         }),
+        'digitalsilk/dummyjson/api/hydrator/product' => new Factory([
+            'digitalsilk/dummyjson/http/uri_factory',
+        ], function (UriFactoryInterface $uriFactory): TransformerInterface {
+            return new ProductHydrator($uriFactory);
+        }),
+        'digitalsilk/dummyjson/api/command/products/list' => new Factory([
+            'digitalsilk/dummyjson/api/client',
+            'digitalsilk/dummyjson/api/hydrator/product',
+        ], function (ApiClientInterface $client, TransformerInterface $hydrator): ListProductsCommandInterface {
+                return new ApiListProductsCommand($client, $hydrator);
+            }
+        ),
     ];
 };
