@@ -5,10 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="DigitalSilk\TestPlugin\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\TestPlugin\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/phpunit/Func" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/src" isTestSource="false" packagePrefix="DigitalSilk\TestPlugin\Demo\" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\TestPlugin\Demo\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\DummyJson\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/src" isTestSource="false" packagePrefix="DigitalSilk\DummyJson\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
@@ -82,6 +80,13 @@
       <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wpackagist-plugin/woocommerce" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ancarda/psr7-string-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/violet/streaming-json-encoder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/halaxa/json-machine" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wp-oop/http-client" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

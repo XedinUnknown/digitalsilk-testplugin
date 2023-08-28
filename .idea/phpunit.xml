@@ -3,6 +3,7 @@
   <component name="PHPUnit">
     <option name="directories">
       <list>
+        <option value="$PROJECT_DIR$/modules/dummyjson/tests" />
         <option value="$PROJECT_DIR$/tests/phpunit/Func" />
       </list>
     </option>
