@@ -21,7 +21,7 @@ use WpOop\HttpClient\Client;
 
 return function (string $modDir): array {
     return [
-        'digitalsilk/dummyjson/is_debug' => new Value(false),
+        'digitalsilk/dummyjson/is_debug' => new Value(true),
         'digitalsilk/dummyjson/http/psr17_factory' => new Factory([], function (): Psr17Factory {
             $factory = new Psr17Factory();
 
@@ -41,8 +41,9 @@ return function (string $modDir): array {
         ]),
         'digitalsilk/dummyjson/api/encoder' => new Alias('digitalsilk/dummyjson/codec/json_streaming_encoder'),
         'digitalsilk/dummyjson/api/decoder' => new Factory([
-        ], function (): StreamingDecoderInterface {
-            return new JsonMachineDecoder([
+            'digitalsilk/dummyjson/is_debug',
+        ], function (bool $isDebug): StreamingDecoderInterface {
+            return new JsonMachineDecoder($isDebug, [
                 '/products',
                 '/total',
             ]);

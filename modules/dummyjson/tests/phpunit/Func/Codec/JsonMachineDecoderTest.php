@@ -17,7 +17,7 @@ class JsonMachineDecoderTest extends TestCase
             $jsonString = $this->getDummyJson();
             $expectedData = json_decode($jsonString, true);
             $rawData = new StringStream($jsonString);
-            $decoder = new JsonMachineDecoder(['']);
+            $decoder = new JsonMachineDecoder(true, ['']);
             $data = $decoder->decode($rawData);
         }
 

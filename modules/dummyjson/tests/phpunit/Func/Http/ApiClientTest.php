@@ -26,7 +26,7 @@ class ApiClientTest extends AbstractModularTestCase
             $jsonString = $this->getDummyJson();
             $data = json_decode($jsonString, true);
             $httpClient = $this->createHttpClient($jsonString);
-            $decoder = new JsonMachineDecoder(['']);
+            $decoder = new JsonMachineDecoder(true, ['']);
             $container = $this->bootstrapModules([new DummyJsonModule()], [
                 'digitalsilk/dummyjson/http/client' => fn() => $httpClient,
                 'digitalsilk/dummyjson/api/decoder' => fn() => $decoder,
