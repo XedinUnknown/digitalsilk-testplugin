@@ -19,5 +19,5 @@ interface SelectResultInterface extends Traversable
      *
      * @return int The total number of rows found.
      */
-    public function getFoundRowsCount(): int;
+    public function getFoundRowsCount(): ?int;
 }
