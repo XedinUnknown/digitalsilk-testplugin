@@ -23,5 +23,5 @@ interface ListProductsCommandInterface
      *
      * @throw RuntimeException If problem retrieving.
      */
-    public function listProducts(?string $keyphrase, int $limit = 0, int $offset = 0): SelectResultInterface;
+    public function listProducts(?string $keyphrase = null, int $limit = 0, int $offset = 0): SelectResultInterface;
 }
