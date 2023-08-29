@@ -34,7 +34,7 @@ return function (string $modDir): array {
         'digitalsilk/dummyjson/http/request_factory' => new Alias('digitalsilk/dummyjson/http/psr17_factory'),
         'digitalsilk/dummyjson/http/uri_factory' => new Alias('digitalsilk/dummyjson/http/psr17_factory'),
         'digitalsilk/dummyjson/http/client' => new Factory([
-            'digitalsilk/dummyjson/psr17_factory'
+            'digitalsilk/dummyjson/http/psr17_factory',
         ], function (ResponseFactoryInterface $responseFactory): ClientInterface {
             $httpClient = new Client([], $responseFactory);
 
