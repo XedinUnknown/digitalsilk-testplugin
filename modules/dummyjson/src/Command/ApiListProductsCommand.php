@@ -22,7 +22,9 @@ use Traversable;
 class ApiListProductsCommand implements ListProductsCommandInterface
 {
     /** @var string */
-    public const REQUEST_ENDPOINT = '/products';
+    public const LIST_REQUEST_ENDPOINT = '/products';
+    /** @var string */
+    public const SEARCH_REQUEST_ENDPOINT = '/products/search';
     /** @var string */
     public const REQUEST_METHOD = ApiClientInterface::METHOD_GET;
 
@@ -50,11 +52,13 @@ class ApiListProductsCommand implements ListProductsCommandInterface
             'limit' => $limit,
             'skip' => $offset
         ];
+        $endpoint = static::LIST_REQUEST_ENDPOINT;
         if ($keyphrase !== null) {
-            $params['search'] = $keyphrase;
+            $params['q'] = $keyphrase;
+            $endpoint = static::SEARCH_REQUEST_ENDPOINT;
         }
 
-        $response = $this->client->sendRequest(static::REQUEST_ENDPOINT, static::REQUEST_METHOD, $params);
+        $response = $this->client->sendRequest($endpoint, static::REQUEST_METHOD, $params);
         $result = $this->createSelectResultFromResponse($response);
 
         return $result;
