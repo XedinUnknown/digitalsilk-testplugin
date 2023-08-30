@@ -156,8 +156,8 @@ class ApiClient implements ApiClientInterface
             throw new RangeException('Response does not specify a content type');
         }
 
-        $contentType = $response->getHeader('Content-Type');
-        $contentType = (string) array_pop($contentType);
+        // May include charset information, e.g. `application/json; charset=utf-8`
+        list($contentType) = explode(';', ($response->getHeader('Content-Type'))[0] ?? '');
 
         if ($contentType !== $allowedContentType) {
             throw new RangeException(sprintf('Unsupported content type "%1$s"', $contentType));
