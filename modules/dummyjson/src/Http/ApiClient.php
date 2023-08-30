@@ -23,12 +23,16 @@ use Traversable;
  */
 class ApiClient implements ApiClientInterface
 {
+    /** @var string */
+    public const AUTH_ENDPOINT_PREFIX = '/auth';
+
     protected UriInterface $baseUrl;
     protected ClientInterface $client;
     protected RequestFactoryInterface $requestFactory;
     protected UriFactoryInterface $uriFactory;
     protected StreamingEncoderInterface $encoder;
     protected StreamingDecoderInterface $decoder;
+    protected ?AuthTokenProviderInterface $tokenProvider;
 
     public function __construct(
         UriInterface $baseUrl,
@@ -36,7 +40,8 @@ class ApiClient implements ApiClientInterface
         RequestFactoryInterface $requestFactory,
         UriFactoryInterface $uriFactory,
         StreamingEncoderInterface $encoder,
-        StreamingDecoderInterface $decoder
+        StreamingDecoderInterface $decoder,
+        ?AuthTokenProviderInterface $tokenProvider
     ) {
         $this->baseUrl = $baseUrl;
         $this->client = $client;
@@ -44,6 +49,7 @@ class ApiClient implements ApiClientInterface
         $this->uriFactory = $uriFactory;
         $this->encoder = $encoder;
         $this->decoder = $decoder;
+        $this->tokenProvider = $tokenProvider;
     }
 
     /**
@@ -52,12 +58,18 @@ class ApiClient implements ApiClientInterface
     public function sendRequest(string $uri, string $method, ?iterable $data = null): DataResponseInterface
     {
         try {
-            $url = $this->resolveUri($this->baseUrl, $uri);
+            $url = $this->getEndpointUrl($uri);
             $request = $this->requestFactory->createRequest($method, $url);
 
             $request = $method === 'GET'
                 ? $this->encodeQueryData($request, $data)
                 : $this->encodeBodyData($request, $data);
+
+            // Authentication is optional
+            if ($this->tokenProvider !== null) {
+                $request = $this->encodeAuthData($request, $this->tokenProvider);
+            }
+
             $response = $this->client->sendRequest($request);
         } catch (Exception $e) {
             if (! $e instanceof ClientExceptionInterface) {
@@ -181,6 +193,28 @@ class ApiClient implements ApiClientInterface
     }
 
     /**
+     * Configures the given request with authentication data.
+     *
+     * @param RequestInterface $request The request to configure.
+     * @param AuthTokenProviderInterface $tokenProvider Provides an authentication token.
+     *
+     * @return RequestInterface The configured request.
+     *
+     * @throws RuntimeException If problem configuring.
+     */
+    protected function encodeAuthData(
+        RequestInterface $request,
+        AuthTokenProviderInterface $tokenProvider
+    ): RequestInterface
+    {
+        $token = $tokenProvider->provideAuthToken();
+        $authHeader = sprintf('Bearer %1$s', $token);
+        $request = $request->withHeader('Authorization', $authHeader);
+
+        return $request;
+    }
+
+    /**
      * Validates a data response.
      *
      * The response body stream may be unbuffered, which means that it may only be consumed once.
@@ -235,5 +269,24 @@ class ApiClient implements ApiClientInterface
                 )
             );
         }
+    }
+
+    /**
+     * Retrieves a URL for the given resource URI.
+     *
+     * @param string $url The URI to get the URL for.
+     *
+     * @return UriInterface The URL.
+     *
+     *
+     */
+    protected function getEndpointUrl(string $url): UriInterface
+    {
+        $baseUrl = $this->tokenProvider !== null
+            ? $this->resolveUri($this->baseUrl, static::AUTH_ENDPOINT_PREFIX)
+            : $this->baseUrl;
+        $url = $this->resolveUri($baseUrl, $url);
+
+        return $url;
     }
 }

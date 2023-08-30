@@ -8,10 +8,12 @@ use Ancarda\Psr7\StringStream\StringStream;
 use DigitalSilk\DummyJson\Command\ListProductsCommandInterface;
 use DigitalSilk\DummyJson\Data\ProductInterface;
 use DigitalSilk\DummyJson\DummyJsonModule;
+use DigitalSilk\DummyJson\Http\AuthTokenProviderInterface;
 use DigitalSilk\DummyJson\Test\ModulePathTrait;
 use DigitalSilk\TestPlugin\Test\AbstractModularTestCase;
 use Generator;
 use Nyholm\Psr7\Response;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
@@ -26,12 +28,14 @@ class ApiListProductsCommandTest extends AbstractModularTestCase
     public function testListProducts()
     {
         {
+            $authToken = uniqid('auth_token');
             $jsonString = $this->getDummyJson();
             $data = json_decode($jsonString, true);
             $comparedProduct = $data['products'][0];
             $httpClient = $this->createHttpClient($jsonString);
             $container = $this->bootstrapModules([new DummyJsonModule()], [
                 'digitalsilk/dummyjson/http/client' => fn() => $httpClient,
+                'digitalsilk/dummyjson/api/auth/token_provider' => fn() => $this->createTokenProvider($authToken),
             ]);
             $subject = $container->get('digitalsilk/dummyjson/api/command/products/list');
             assert($subject instanceof ListProductsCommandInterface);
@@ -100,5 +104,24 @@ class ApiListProductsCommandTest extends AbstractModularTestCase
     protected function getStreamForString(string $contents): StreamInterface
     {
         return new StringStream($contents);
+    }
+
+    /**
+     * Creates a new auth token provider with the specified token.
+     *
+     * @param string $authToken The auth token that will be provided.
+     *
+     * @return AuthTokenProviderInterface&MockObject
+     */
+    protected function createTokenProvider(string $authToken): AuthTokenProviderInterface
+    {
+        $mock = $this->getMockBuilder(AuthTokenProviderInterface::class)
+            ->onlyMethods(['provideAuthToken'])
+            ->getMockForAbstractClass();
+
+        $mock->method('provideAuthToken')
+            ->will($this->returnValue($authToken));
+
+        return $mock;
     }
 }

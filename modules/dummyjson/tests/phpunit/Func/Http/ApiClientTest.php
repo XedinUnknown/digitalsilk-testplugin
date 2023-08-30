@@ -8,9 +8,11 @@ use Ancarda\Psr7\StringStream\StringStream;
 use DigitalSilk\DummyJson\Codec\JsonMachineDecoder;
 use DigitalSilk\DummyJson\DummyJsonModule;
 use DigitalSilk\DummyJson\Http\ApiClientInterface;
+use DigitalSilk\DummyJson\Http\AuthTokenProviderInterface;
 use DigitalSilk\DummyJson\Test\ModulePathTrait;
 use DigitalSilk\TestPlugin\Test\AbstractModularTestCase;
 use Nyholm\Psr7\Response;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Client\ClientInterface;
 
 class ApiClientTest extends AbstractModularTestCase
@@ -23,6 +25,7 @@ class ApiClientTest extends AbstractModularTestCase
     public function testRequestProducts()
     {
         {
+            $authToken = uniqid('auth_token');
             $jsonString = $this->getDummyJson();
             $data = json_decode($jsonString, true);
             $httpClient = $this->createHttpClient($jsonString);
@@ -30,6 +33,7 @@ class ApiClientTest extends AbstractModularTestCase
             $container = $this->bootstrapModules([new DummyJsonModule()], [
                 'digitalsilk/dummyjson/http/client' => fn() => $httpClient,
                 'digitalsilk/dummyjson/api/decoder' => fn() => $decoder,
+                'digitalsilk/dummyjson/api/auth/token_provider' => fn() => $this->createTokenProvider($authToken),
             ]);
             $subject = $container->get('digitalsilk/dummyjson/api/client');
             assert($subject instanceof ApiClientInterface);
@@ -68,6 +72,25 @@ class ApiClientTest extends AbstractModularTestCase
         $mock->expects($this->exactly(1))
             ->method('sendRequest')
             ->will($this->returnValue($response));
+
+        return $mock;
+    }
+
+    /**
+     * Creates a new auth token provider with the specified token.
+     *
+     * @param string $authToken The auth token that will be provided.
+     *
+     * @return AuthTokenProviderInterface&MockObject
+     */
+    protected function createTokenProvider(string $authToken): AuthTokenProviderInterface
+    {
+        $mock = $this->getMockBuilder(AuthTokenProviderInterface::class)
+            ->onlyMethods(['provideAuthToken'])
+            ->getMockForAbstractClass();
+
+        $mock->method('provideAuthToken')
+            ->will($this->returnValue($authToken));
 
         return $mock;
     }

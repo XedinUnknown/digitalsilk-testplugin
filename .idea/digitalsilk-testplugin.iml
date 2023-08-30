@@ -87,6 +87,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/violet/streaming-json-encoder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/halaxa/json-machine" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wp-oop/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wp-oop/transient-cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

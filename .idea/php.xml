@@ -104,6 +104,8 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/vendor/halaxa/json-machine" />
       <path value="$PROJECT_DIR$/vendor/violet/streaming-json-encoder" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/wp-oop/transient-cache" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
