@@ -26,6 +26,7 @@ use WpOop\HttpClient\Client;
 return function (string $modDir): array {
     return [
         'digitalsilk/dummyjson/is_debug' => new Value(true),
+        'digitalsilk/dummyjson/tempdir' => new Factory([], fn() => sys_get_temp_dir()),
         'digitalsilk/dummyjson/http/psr17_factory' => new Factory([], function (): Psr17Factory {
             $factory = new Psr17Factory();
 
@@ -33,10 +34,15 @@ return function (string $modDir): array {
         }),
         'digitalsilk/dummyjson/http/request_factory' => new Alias('digitalsilk/dummyjson/http/psr17_factory'),
         'digitalsilk/dummyjson/http/uri_factory' => new Alias('digitalsilk/dummyjson/http/psr17_factory'),
+        'digitalsilk/dummyjson/http/request_proxy_dir' => new Alias('digitalsilk/dummyjson/tempdir'),
         'digitalsilk/dummyjson/http/client' => new Factory([
             'digitalsilk/dummyjson/http/psr17_factory',
-        ], function (ResponseFactoryInterface $responseFactory): ClientInterface {
-            $httpClient = new Client([], $responseFactory);
+            'digitalsilk/dummyjson/http/request_proxy_dir',
+        ], function (
+            ResponseFactoryInterface $responseFactory,
+            string $requestProxyDir
+        ): ClientInterface {
+            $httpClient = new Client([], $responseFactory, $requestProxyDir);
 
             return $httpClient;
         }),
