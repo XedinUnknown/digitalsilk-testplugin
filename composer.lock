@@ -1113,26 +1113,29 @@
         },
         {
             "name": "wp-oop/transient-cache",
-            "version": "dev-develop",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-oop/transient-cache.git",
-                "reference": "94b21321867dfb82eda7fe2ab962895c939f446d"
+                "reference": "774783e36637ddf1682f85649d9ccef8e455df25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-oop/transient-cache/zipball/94b21321867dfb82eda7fe2ab962895c939f446d",
-                "reference": "94b21321867dfb82eda7fe2ab962895c939f446d",
+                "url": "https://api.github.com/repos/wp-oop/transient-cache/zipball/774783e36637ddf1682f85649d9ccef8e455df25",
+                "reference": "774783e36637ddf1682f85649d9ccef8e455df25",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "php": "^7.4 | ^8.0",
                 "psr/simple-cache": "^1.0"
             },
             "require-dev": {
                 "brain/monkey": "^2.3",
                 "johnpbloch/wordpress-core": "^5.0",
-                "phpunit/phpunit": "^7.1"
+                "php-stubs/wordpress-stubs": "6.3",
+                "phpunit/phpunit": "^9.0",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^5.0"
             },
             "default-branch": true,
             "type": "library",
@@ -1148,7 +1151,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -1160,9 +1163,9 @@
             "description": "A PSR-16 wrapper for WP transients.",
             "support": {
                 "issues": "https://github.com/wp-oop/transient-cache/issues",
-                "source": "https://github.com/wp-oop/transient-cache/tree/develop"
+                "source": "https://github.com/wp-oop/transient-cache/tree/v0.2.0-alpha1"
             },
-            "time": "2020-10-14T08:37:13+00:00"
+            "time": "2023-08-30T16:06:33+00:00"
         },
         {
             "name": "wp-oop/wordpress-interface",
@@ -1795,12 +1798,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "fa1ec24f0ab1efe642671ec15c51a3ab879f59bf"
+                "reference": "ce465542111cd1db159b8eece860360c290f06ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/fa1ec24f0ab1efe642671ec15c51a3ab879f59bf",
-                "reference": "fa1ec24f0ab1efe642671ec15c51a3ab879f59bf",
+                "url": "https://api.github.com/repos/composer/semver/zipball/ce465542111cd1db159b8eece860360c290f06ea",
+                "reference": "ce465542111cd1db159b8eece860360c290f06ea",
                 "shasum": ""
             },
             "require": {
@@ -1869,7 +1872,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-13T15:47:53+00:00"
+            "time": "2023-08-30T15:19:54+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -2976,12 +2979,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "a74e6341296fe533cb69c8c94193afc7537443ec"
+                "reference": "fe53daa0f3542d22cff8336de5d15ba1213ea66f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/a74e6341296fe533cb69c8c94193afc7537443ec",
-                "reference": "a74e6341296fe533cb69c8c94193afc7537443ec",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/fe53daa0f3542d22cff8336de5d15ba1213ea66f",
+                "reference": "fe53daa0f3542d22cff8336de5d15ba1213ea66f",
                 "shasum": ""
             },
             "require": {
@@ -3046,7 +3049,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-21T05:57:35+00:00"
+            "time": "2023-08-30T13:01:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3295,12 +3298,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1e5fec0e7eb197de7e50d5eb5012722dcc38a692"
+                "reference": "c7e801e2751a879f3c28aca102a4f4e44a773748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1e5fec0e7eb197de7e50d5eb5012722dcc38a692",
-                "reference": "1e5fec0e7eb197de7e50d5eb5012722dcc38a692",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c7e801e2751a879f3c28aca102a4f4e44a773748",
+                "reference": "c7e801e2751a879f3c28aca102a4f4e44a773748",
                 "shasum": ""
             },
             "require": {
@@ -3390,7 +3393,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-08-26T05:31:07+00:00"
+            "time": "2023-08-30T12:23:08+00:00"
         },
         {
             "name": "psr/log",

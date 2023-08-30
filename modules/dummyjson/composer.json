@@ -23,7 +23,7 @@
     "halaxa/json-machine": "^1.0",
     "nyholm/psr7": "^1.0",
     "wp-oop/http-client": "^0.1.0-alpha1",
-    "wp-oop/transient-cache": "^0.1.0-alpha4"
+    "wp-oop/transient-cache": "^0.2.0-alpha1"
   },
   "require-dev": {
     "ext-json": "*",
