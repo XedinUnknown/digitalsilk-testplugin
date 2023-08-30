@@ -7,7 +7,7 @@ namespace DigitalSilk\DummyJson\Command;
 use DigitalSilk\DummyJson\Data\CallbackSelectResult;
 use DigitalSilk\DummyJson\Data\ProductInterface;
 use DigitalSilk\DummyJson\Data\SelectResultInterface;
-use DigitalSilk\DummyJson\Data\SequentialSelectResult;
+use DigitalSilk\DummyJson\Data\ProductsSelectResult;
 use DigitalSilk\DummyJson\Http\ApiClientInterface;
 use DigitalSilk\DummyJson\Http\DataResponseInterface;
 use DigitalSilk\DummyJson\Transform\TransformerInterface;
@@ -88,7 +88,7 @@ class ApiListProductsCommand implements ListProductsCommandInterface
 
             return $this->transformer->transform($data);
         };
-        $result = new SequentialSelectResult($data); // Native structures
+        $result = new ProductsSelectResult($data); // Native structures
         $transformedResult = new CallbackSelectResult($result, $callback); // Model classes
 
         return $transformedResult;

@@ -65,10 +65,7 @@ return function (string $modDir): array {
         'digitalsilk/dummyjson/api/decoder' => new Factory([
             'digitalsilk/dummyjson/is_debug',
         ], function (bool $isDebug): StreamingDecoderInterface {
-            return new JsonMachineDecoder($isDebug, [
-                '/products',
-                '/total',
-            ]);
+            return new JsonMachineDecoder($isDebug, ['']);
         }),
         'digitalsilk/dummyjson/api/cache/pool_name' => new Value('dummyjson/api'),
         'digitalsilk/dummyjson/api/cache/pool' => new Factory([
@@ -96,11 +93,7 @@ return function (string $modDir): array {
         'digitalsilk/dummyjson/api/auth/username' => new Value(''),
         'digitalsilk/dummyjson/api/auth/password' => new Value(''),
         'digitalsilk/dummyjson/api/auth/encoder' => new Alias('digitalsilk/dummyjson/api/encoder'),
-        'digitalsilk/dummyjson/api/auth/decoder' => new Factory([
-            'digitalsilk/dummyjson/is_debug',
-        ], function (bool $isDebug): StreamingDecoderInterface {
-            return new JsonMachineDecoder($isDebug, ['']);
-        }),
+        'digitalsilk/dummyjson/api/auth/decoder' => new Alias('digitalsilk/dummyjson/api/decoder'),
         'digitalsilk/dummyjson/api/auth/token_provider' => new Factory([
             'digitalsilk/dummyjson/http/client',
             'digitalsilk/dummyjson/api/cache/pool',
