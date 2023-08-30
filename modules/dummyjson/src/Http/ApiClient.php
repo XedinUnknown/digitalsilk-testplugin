@@ -80,12 +80,22 @@ class ApiClient implements ApiClientInterface
      * @param UriInterface|string $relUri The relative URI to append. Leading slashes will be removed.
      *
      * @return UriInterface A URI with relative URI appended to base via a path separator.
+     *
+     * @throws RuntimeException If problem resolving.
      */
     protected function resolveUri($baseUri, $relUri): UriInterface
     {
-        $baseUri = rtrim((string) $baseUri, '/');
-        $relUri = ltrim((string) $relUri, '/');
-        $fullUri = $this->uriFactory->createUri("$baseUri/$relUri");
+        try {
+            $baseUri = rtrim((string)$baseUri, '/');
+            $relUri = ltrim((string)$relUri, '/');
+            $fullUri = $this->uriFactory->createUri("$baseUri/$relUri");
+        } catch (Exception $e) {
+            if (! $e instanceof RuntimeException) {
+                $e = new RuntimeException($e->getMessage(), 0, $e);
+            }
+
+            throw $e;
+        }
 
         return $fullUri;
     }
