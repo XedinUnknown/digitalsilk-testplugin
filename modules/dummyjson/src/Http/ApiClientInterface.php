@@ -18,7 +18,7 @@ interface ApiClientInterface
     /**
      * Send a request to an API endpoint.
      *
-     * @param string $url The endpoint URL, relative to API basepath.
+     * @param string $uri The endpoint URI, relative to API basepath.
      * @param string $method The request method.
      * @param ?iterable $data The data to optionally send in the request.
      *
@@ -27,5 +27,5 @@ interface ApiClientInterface
      * @throws ApiExceptionInterface If API reports a problem.
      * @throws RuntimeException For any other problem in response handling.
      */
-    public function sendRequest(string $url, string $method, ?iterable $data = null): DataResponseInterface;
+    public function sendRequest(string $uri, string $method, ?iterable $data = null): DataResponseInterface;
 }

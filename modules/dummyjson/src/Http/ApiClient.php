@@ -49,11 +49,11 @@ class ApiClient implements ApiClientInterface
     /**
      * @inheritDoc
      */
-    public function sendRequest(string $url, string $method, ?iterable $data = null): DataResponseInterface
+    public function sendRequest(string $uri, string $method, ?iterable $data = null): DataResponseInterface
     {
         try {
-            $fullUri = $this->resolveUri($this->baseUrl, $url);
-            $request = $this->requestFactory->createRequest($method, $fullUri);
+            $url = $this->resolveUri($this->baseUrl, $uri);
+            $request = $this->requestFactory->createRequest($method, $url);
 
             $request = $method === 'GET'
                 ? $this->encodeQueryData($request, $data)
