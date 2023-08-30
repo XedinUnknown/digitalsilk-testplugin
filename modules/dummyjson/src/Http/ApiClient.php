@@ -157,7 +157,7 @@ class ApiClient implements ApiClientInterface
         }
 
         // May include charset information, e.g. `application/json; charset=utf-8`
-        list($contentType) = explode(';', ($response->getHeader('Content-Type'))[0] ?? '');
+        [$contentType] = explode(';', ($response->getHeader('Content-Type'))[0] ?? '');
 
         if ($contentType !== $allowedContentType) {
             throw new RangeException(sprintf('Unsupported content type "%1$s"', $contentType));
