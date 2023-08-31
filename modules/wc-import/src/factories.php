@@ -5,16 +5,30 @@ declare(strict_types=1);
 use Dhii\Services\Factories\Constructor;
 use Dhii\Services\Factories\Value;
 use Dhii\Services\Factory;
+use DigitalSilk\WcImport\CustomContextLogger;
 use DigitalSilk\WcImport\Hooks\AddNavigation;
 use DigitalSilk\WcImport\Hooks\AddTaxonomy;
 use DigitalSilk\WcImport\Hooks\RenderSettingsPage;
+use DigitalSilk\WcImport\Hooks\RunImport;
 use DigitalSilk\WcImport\Hooks\SaveSettings;
+use DigitalSilk\WcImport\Hooks\ScheduleImport;
 use DigitalSilk\WcImport\ProductImporter;
 use DigitalSilk\WcImport\ProductImporterInterface;
 
 return function (string $modDir): array {
     return [
         'digitalsilk/wc-import/is_debug' => new Value(false),
+        'digitalsilk/wc-import/batch_size' => new Value(3),
+        'digitalsilk/wc-import/logging/wc_logger' => new Factory([], fn() => wc_get_logger()),
+        'digitalsilk/wc-import/logging/import_log_name' => new Value('digitalsilk-wc-import'),
+        'digitalsilk/wc-import/logging/import_logger' => new Factory([
+            'digitalsilk/wc-import/logging/wc_logger',
+            'digitalsilk/wc-import/logging/import_log_name',
+        ], function (WC_Logger_Interface $logger, string $logName): WC_Logger_Interface {
+            return new CustomContextLogger($logger, [
+                'source' => $logName,
+            ]);
+        }),
         'digitalsilk/wc-import/importer/product' => new Factory([
             'digitalsilk/wc-import/taxonomy/brand/name',
         ], function (string $brandTaxonomyName): ProductImporterInterface {
@@ -43,6 +57,15 @@ return function (string $modDir): array {
             $pageSlug = 'dummyjson';
             return new AddNavigation($renderSettingsPageHook, $pageTitle, $pageSlug);
         }),
+        'digitalsilk/wc-import/hooks/schedule_immediate_import' => new Constructor(ScheduleImport::class),
+        'digitalsilk/wc-import/hooks/run_import' => new Constructor(RunImport::class, [
+            'digitalsilk/wc-import/is_debug',
+            'digitalsilk/dummyjson/api/command/products/list',
+            'digitalsilk/wc-import/importer/product',
+            'digitalsilk/wc-import/batch_size',
+            'digitalsilk/wc-import/logging/import_logger',
+            'digitalsilk/wc-import/hooks/schedule_immediate_import',
+        ]),
         'digitalsilk/wc-import/hooks/add_brand_taxonomy' => new Factory([
             'digitalsilk/wc-import/taxonomy/brand/name',
             'digitalsilk/wc-import/taxonomy/brand/settings',

@@ -44,5 +44,13 @@ class WcImportModule implements ModuleInterface
         /** @var callable $saveSettingsHook */
         $saveSettingsHook = $c->get('digitalsilk/wc-import/hooks/save_settings');
         add_action('admin_post_digitalsilk-testplugin-settings-save', $saveSettingsHook);
+
+        /** @var callable $scheduleImportHook */
+        $scheduleImportHook = $c->get('digitalsilk/wc-import/hooks/schedule_immediate_import');
+        add_action('admin_post_digitalsilk-testplugin-schedule-import', fn() => $scheduleImportHook(0, null));
+
+        /** @var callable $runImportHook */
+        $runImportHook = $c->get('digitalsilk/wc-import/hooks/run_import');
+        add_action('digitalsilk_testplugin_run_import', $runImportHook);
     }
 }
