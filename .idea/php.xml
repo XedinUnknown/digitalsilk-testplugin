@@ -106,6 +106,7 @@
       <path value="$PROJECT_DIR$/vendor/violet/streaming-json-encoder" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/wp-oop/transient-cache" />
+      <path value="$PROJECT_DIR$/vendor/php-stubs/woocommerce-stubs" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

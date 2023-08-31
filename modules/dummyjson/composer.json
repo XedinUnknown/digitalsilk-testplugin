@@ -27,6 +27,7 @@
   },
   "require-dev": {
     "ext-json": "*",
+    "phpunit/phpunit": "^9.0",
     "ancarda/psr7-string-stream": "dev-patch-1"
   },
   "autoload": {

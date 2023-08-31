@@ -17,6 +17,11 @@
     "dhii/containers": "^0.1",
     "dhii/services": "^0.1.1-alpha3"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "wpackagist-plugin/woocommerce": "7.9.0",
+    "php-stubs/woocommerce-stubs": "7.9.0"
+  },
   "autoload": {
     "psr-4": {
       "DigitalSilk\\WcImport\\": "src"
