@@ -33,16 +33,8 @@ class WcImportModule implements ModuleInterface
      */
     public function run(ContainerInterface $c): void
     {
-        add_action('init', function () use ($c) {
-            $brandTaxonomyKey = 'brand';
-            $productObjectType = 'product';
-            /** @var string $brandTaxonomyName */
-            $brandTaxonomyName = $c->get("digitalsilk/wc-import/taxonomy/$brandTaxonomyKey/name");
-            /** @var array<string, mixed> $brandTaxonomyArgs */
-            $brandTaxonomyArgs = $c->get("digitalsilk/wc-import/taxonomy/$brandTaxonomyKey/settings");
-
-            register_taxonomy( $brandTaxonomyName, $productObjectType, $brandTaxonomyArgs );
-            register_taxonomy_for_object_type( $brandTaxonomyName, $productObjectType );
-        });
+        /** @var callable $addNavigationHook */
+        $addBrandTaxonomyHook = $c->get('digitalsilk/wc-import/hooks/add_brand_taxonomy');
+        add_action('init', $addBrandTaxonomyHook);
     }
 }

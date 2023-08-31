@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Dhii\Services\Factories\Value;
 use Dhii\Services\Factory;
+use DigitalSilk\WcImport\Hooks\AddTaxonomy;
 use DigitalSilk\WcImport\ProductImporter;
 use DigitalSilk\WcImport\ProductImporterInterface;
 
@@ -24,5 +25,11 @@ return function (string $modDir): array {
             'hierarchical' => true,
             'public' => true,
         ]),
+        'digitalsilk/wc-import/hooks/add_brand_taxonomy' => new Factory([
+            'digitalsilk/wc-import/taxonomy/brand/name',
+            'digitalsilk/wc-import/taxonomy/brand/settings',
+        ], function (string $name, array $args): AddTaxonomy {
+            return new AddTaxonomy($name, $args, 'product');
+        }),
     ];
 };
