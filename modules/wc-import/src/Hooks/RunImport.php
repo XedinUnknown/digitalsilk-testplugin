@@ -68,9 +68,9 @@ class RunImport
         $offset = $processedCount;
 
         if (!$processedCount) {
-            $logger->info(sprintf('Starting import of up to %1$d products', $importLimit));
+            $logger->info(sprintf('Starting import of up to %1$s products', $importLimit ?: '∞'));
         }
-        $logger->info(sprintf('Starting batch of up to %1$d products', $batchSize));
+        $logger->info(sprintf('Starting batch of up to %1$s products', $batchSize ?: '∞'));
 
         try {
             $products = $listCommand->listProducts(null, $limit, $offset);
