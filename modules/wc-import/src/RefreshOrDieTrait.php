@@ -29,10 +29,12 @@ trait RefreshOrDieTrait
     {
         $referer = $_SERVER['HTTP_REFERER'] ?? null;
         $dieOptions = ['back_link' => true];
+
         if ($referer) {
-            wp_redirect($referer) && wp_die($message, $title, $dieOptions);
-        } else {
-            wp_die($message, $title, $dieOptions);
+            wp_redirect($referer);
         }
+
+        wp_die($message, $title, $dieOptions);
+        die(); // Tells psalm that indeed this function terminates execution
     }
 }

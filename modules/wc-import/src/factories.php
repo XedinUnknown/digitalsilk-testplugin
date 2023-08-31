@@ -54,11 +54,16 @@ return function (string $modDir): array {
             'digitalsilk/wc-import/dummyjson/password',
             'digitalsilk/wc-import/batch_size',
             'digitalsilk/wc-import/import_limit',
-        ], function (string $username, string $password, $batchSize, $importLimit) {
-            $batchSize = intval($batchSize);
-            $importLimit = intval($importLimit);
-            return new RenderSettingsPage($username, $password, $batchSize, $importLimit);
-        }),
+        ],
+            /**
+             * @param numeric $batchSize
+             * @param numeric $importLimit
+             */
+            function (string $username, string $password, $batchSize, $importLimit) {
+                $batchSize = intval($batchSize);
+                $importLimit = intval($importLimit);
+                return new RenderSettingsPage($username, $password, $batchSize, $importLimit);
+            }),
         'digitalsilk/wc-import/hooks/add_navigation' => new Factory([
             'digitalsilk/wc-import/hooks/render_settings_page',
         ], function (RenderSettingsPage $renderSettingsPageHook) {
@@ -76,6 +81,10 @@ return function (string $modDir): array {
             'digitalsilk/wc-import/logging/import_logger',
             'digitalsilk/wc-import/hooks/schedule_immediate_import',
         ],
+            /**
+             * @param numeric $batchSize
+             * @param numeric $importLimit
+             */
             function (
                 bool $isDebug,
                 ListProductsCommandInterface $listProductsCommand,

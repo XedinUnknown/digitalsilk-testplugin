@@ -28,7 +28,7 @@ class CustomContextLogger implements LoggerInterface
     {
         $context = array_merge($this->defaultContext, $context);
         $logger = wc_get_logger();
-        $logger->log($level, $message, $context);
+        $logger->log((string) $level, $message, $context);
     }
 
     /**

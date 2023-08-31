@@ -33,7 +33,7 @@ class WcImportModule implements ModuleInterface
      */
     public function run(ContainerInterface $c): void
     {
-        /** @var callable $addNavigationHook */
+        /** @var callable $addBrandTaxonomyHook */
         $addBrandTaxonomyHook = $c->get('digitalsilk/wc-import/hooks/add_brand_taxonomy');
         add_action('init', $addBrandTaxonomyHook);
 
@@ -47,7 +47,11 @@ class WcImportModule implements ModuleInterface
 
         /** @var callable $scheduleImportHook */
         $scheduleImportHook = $c->get('digitalsilk/wc-import/hooks/schedule_immediate_import');
-        add_action('admin_post_digitalsilk-testplugin-schedule-import', fn() => $scheduleImportHook(0, null));
+        add_action(
+            'admin_post_digitalsilk-testplugin-schedule-import',
+            /** @psalm-suppress MissingClosureReturnType */
+            fn() => $scheduleImportHook(0, null)
+        );
 
         /** @var callable $runImportHook */
         $runImportHook = $c->get('digitalsilk/wc-import/hooks/run_import');

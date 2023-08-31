@@ -110,8 +110,11 @@ class ProductImporter implements ProductImporterInterface
         $wcProduct->save();
 
         // Operations that require product ID
+        /** @psalm-suppress PossiblyUndefinedVariable */
         if ($brand) {
-            wp_set_object_terms($wcProduct->get_id(), $brand->term_id, $this->taxonomyNameBrands);
+            /** @var int $brandId */
+            $brandId = $brand->term_id;
+            wp_set_object_terms($wcProduct->get_id(), $brandId, $this->taxonomyNameBrands);
         }
 
         return $wcProduct;

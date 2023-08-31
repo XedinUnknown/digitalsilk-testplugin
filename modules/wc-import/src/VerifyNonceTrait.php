@@ -26,7 +26,7 @@ trait VerifyNonceTrait
         $action = $action ?? -1;
         $nonce = $_POST[$fieldName] ?? null;
 
-        if (empty($nonce)) {
+        if (!is_string($nonce) || empty($nonce)) {
             throw new RangeException('Nonce is absent from request data');
         }
 

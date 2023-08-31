@@ -8,12 +8,12 @@ use DigitalSilk\DummyJson\Command\ListProductsCommandInterface;
 use DigitalSilk\WcImport\ProductImporterInterface;
 use Exception;
 use Psr\Log\LoggerInterface;
-use WC_Logger_Interface;
+use DateTimeInterface;
 
 /**
  * Runs an import.
  *
- * @psalm-type ScheduleHook = callable(int, ?DateTimeInterface)
+ * @psalm-type ScheduleHook = callable(int, ?DateTimeInterface): void
  */
 class RunImport
 {
@@ -119,7 +119,9 @@ class RunImport
         // Schedule another import, if necessary
         if ($processedCount < $totalFound) {
             $logger->info('Scheduling another import');
-            ($this->scheduleHook)($processedCount);
+            $hook = $this->scheduleHook;
+            /** @psalm-suppress TooFewArguments */
+            $hook($processedCount);
 
             return;
         }
