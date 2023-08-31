@@ -46,8 +46,10 @@ class ProductImporter implements ProductImporterInterface
 
         // Category
         $categorySlug = $product->getCategory();
-        $category = $this->getTermForSlug($categorySlug, static::TAXONOMY_NAME_PRODUCT_CAT);
-        $wcProduct->set_category_ids([$category->term_id]);
+        if (strlen($categorySlug)) {
+            $category = $this->getTermForSlug($categorySlug, static::TAXONOMY_NAME_PRODUCT_CAT);
+            $wcProduct->set_category_ids([$category->term_id]);
+        }
 
         // Price
         $price = $product->getPrice();
