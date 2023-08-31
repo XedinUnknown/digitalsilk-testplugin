@@ -9,6 +9,7 @@ use DigitalSilk\WcImport\ProductImporterInterface;
 
 return function (string $modDir): array {
     return [
+        'digitalsilk/wc-import/is_debug' => new Value(false),
         'digitalsilk/wc-import/importer/product' => new Factory([
             'digitalsilk/wc-import/taxonomy/brand/name',
         ], function (string $brandTaxonomyName): ProductImporterInterface {

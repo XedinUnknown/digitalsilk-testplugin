@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Dhii\Package\Version\StringVersionFactoryInterface;
 use Dhii\Services\Factories\Alias;
+use Dhii\Services\Factories\Value;
 use Dhii\Services\Factory;
 use Dhii\Versions\StringVersionFactory;
 use DigitalSilk\TestPlugin\FilePathPluginFactory;
@@ -12,6 +13,7 @@ use WpOop\WordPress\Plugin\PluginInterface;
 
 return function (): array {
     return [
+        'digitalsilk/testplugin/is_debug' => new Value(WP_DEBUG),
         'digitalsilk/testplugin/plugin' => new Factory([
             'wordpress/plugin_factory',
             'digitalsilk/testplugin/main_file_path',
@@ -33,5 +35,7 @@ return function (): array {
         #####################################################
         # Module Wiring
         #####################################################
+        'digitalsilk/dummyjson/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
+        'digitalsilk/wc-import/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
     ];
 };
