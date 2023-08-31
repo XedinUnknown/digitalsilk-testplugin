@@ -24,15 +24,6 @@ class CustomContextLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function add($handle, $message, $level = WC_Log_Levels::NOTICE)
-    {
-        $logger = wc_get_logger();
-        $logger->add($handle, $message, $level);
-    }
-
-    /**
-     * @inheritDoc
-     */
     public function log($level, $message, $context = [])
     {
         $context = array_merge($this->defaultContext, $context);
