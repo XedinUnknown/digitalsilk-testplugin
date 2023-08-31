@@ -36,5 +36,13 @@ class WcImportModule implements ModuleInterface
         /** @var callable $addNavigationHook */
         $addBrandTaxonomyHook = $c->get('digitalsilk/wc-import/hooks/add_brand_taxonomy');
         add_action('init', $addBrandTaxonomyHook);
+
+        /** @var callable $addNavigationHook */
+        $addNavigationHook = $c->get('digitalsilk/wc-import/hooks/add_navigation');
+        add_action('admin_menu', $addNavigationHook);
+
+        /** @var callable $saveSettingsHook */
+        $saveSettingsHook = $c->get('digitalsilk/wc-import/hooks/save_settings');
+        add_action('admin_post_digitalsilk-testplugin-settings-save', $saveSettingsHook);
     }
 }

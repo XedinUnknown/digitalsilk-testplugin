@@ -36,6 +36,9 @@ return function (): array {
         # Module Wiring
         #####################################################
         'digitalsilk/dummyjson/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
+        'digitalsilk/dummyjson/api/auth/username' => new Alias('digitalsilk/wc-import/dummyjson/username'),
+        'digitalsilk/dummyjson/api/auth/password' => new Alias('digitalsilk/wc-import/dummyjson/password'),
+
         'digitalsilk/wc-import/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
     ];
 };
