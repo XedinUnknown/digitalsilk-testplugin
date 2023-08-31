@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
     colors="true"
-    bootstrap="tests/phpunit/bootstrap.php"
->
+    bootstrap="tests/phpunit/bootstrap.php">
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+
     <php>
-        <ini name="display_errors" value="1" />
-        <ini name="display_startup_errors" value="1" />
+        <ini name="display_errors" value="1"/>
+        <ini name="display_startup_errors" value="1"/>
     </php>
+
     <testsuites>
         <testsuite name="functional">
             <directory>tests/phpunit/Func</directory>
@@ -15,9 +24,4 @@
             <directory>modules/*/tests/phpunit</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src</directory>
-        </whitelist>
-    </filter>
 </phpunit>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81151d4312fafaed54439d8b6df1f12c",
+    "content-hash": "9ee4ae487cc4d689d5eb6d38e70b149a",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -465,6 +465,143 @@
             "time": "2021-12-08T16:54:50+00:00"
         },
         {
+            "name": "halaxa/json-machine",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/halaxa/json-machine.git",
+                "reference": "514025c5ebbdb8a058745b573b4a1e81d685802c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/halaxa/json-machine/zipball/514025c5ebbdb8a058745b573b4a1e81d685802c",
+                "reference": "514025c5ebbdb8a058745b573b4a1e81d685802c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "suggest": {
+                "ext-json": "To run JSON Machine out of the box without custom decoders.",
+                "guzzlehttp/guzzle": "To run example with GuzzleHttp"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JsonMachine\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "src/autoloader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Halaxa",
+                    "email": "filip@halaxa.cz"
+                }
+            ],
+            "description": "Efficient, easy-to-use and fast JSON pull parser",
+            "support": {
+                "issues": "https://github.com/halaxa/json-machine/issues",
+                "source": "https://github.com/halaxa/json-machine/tree/1.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://ko-fi.com/G2G57KTE4",
+                    "type": "other"
+                }
+            ],
+            "time": "2022-10-12T11:40:33+00:00"
+        },
+        {
+            "name": "nyholm/psr7",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nyholm/psr7.git",
+                "reference": "3cb4d163b58589e47b35103e8e5e6a6a475b47be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/3cb4d163b58589e47b35103e8e5e6a6a475b47be",
+                "reference": "3cb4d163b58589e47b35103e8e5e6a6a475b47be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.1 || ^2.0"
+            },
+            "provide": {
+                "php-http/message-factory-implementation": "1.0",
+                "psr/http-factory-implementation": "1.0",
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "http-interop/http-factory-tests": "^0.9",
+                "php-http/message-factory": "^1.0",
+                "php-http/psr7-integration-tests": "^1.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.4",
+                "symfony/error-handler": "^4.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nyholm\\Psr7\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                },
+                {
+                    "name": "Martijn van der Ven",
+                    "email": "martijn@vanderven.se"
+                }
+            ],
+            "description": "A fast PHP7 implementation of PSR-7",
+            "homepage": "https://tnyholm.se",
+            "keywords": [
+                "psr-17",
+                "psr-7"
+            ],
+            "support": {
+                "issues": "https://github.com/Nyholm/psr7/issues",
+                "source": "https://github.com/Nyholm/psr7/tree/1.8.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Zegnat",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nyholm",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-02T11:26:24+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.x-dev",
             "source": {
@@ -511,6 +648,269 @@
                 "source": "https://github.com/php-fig/container/tree/1.1.2"
             },
             "time": "2021-11-05T16:50:12+00:00"
+        },
+        {
+            "name": "psr/http-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-client.git",
+                "reference": "0955afe48220520692d2d09f7ab7e0f93ffd6a31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-client/zipball/0955afe48220520692d2d09f7ab7e0f93ffd6a31",
+                "reference": "0955afe48220520692d2d09f7ab7e0f93ffd6a31",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0",
+                "psr/http-message": "^1.0 || ^2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP clients",
+            "homepage": "https://github.com/php-fig/http-client",
+            "keywords": [
+                "http",
+                "http-client",
+                "psr",
+                "psr-18"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-client/tree/1.0.2"
+            },
+            "time": "2023-04-10T20:12:12+00:00"
+        },
+        {
+            "name": "psr/http-factory",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-factory.git",
+                "reference": "6d70f402f0eddb2b154b22950b5381bbf5b28469"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/6d70f402f0eddb2b154b22950b5381bbf5b28469",
+                "reference": "6d70f402f0eddb2b154b22950b5381bbf5b28469",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "psr/http-message": "^1.0 || ^2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "PSR-17: Common interfaces for PSR-7 HTTP message factories",
+            "keywords": [
+                "factory",
+                "http",
+                "message",
+                "psr",
+                "psr-17",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-factory/tree/master"
+            },
+            "time": "2023-05-17T18:32:11+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/1.1"
+            },
+            "time": "2023-04-04T09:50:52+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "time": "2021-05-03T11:20:27+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/master"
+            },
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -578,7 +978,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -595,6 +995,55 @@
                 }
             ],
             "time": "2023-01-26T09:26:14+00:00"
+        },
+        {
+            "name": "violet/streaming-json-encoder",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/violet-php/streaming-json-encoder.git",
+                "reference": "5cc3d506ba7768f8db8ad3d21dcd251a64598805"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/violet-php/streaming-json-encoder/zipball/5cc3d506ba7768f8db8ad3d21dcd251a64598805",
+                "reference": "5cc3d506ba7768f8db8ad3d21dcd251a64598805",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "psr/http-message": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Violet\\StreamingJsonEncoder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Riikka Kalliomäki",
+                    "email": "riikka.kalliomaki@gmail.com",
+                    "homepage": "http://riimu.net"
+                }
+            ],
+            "description": "Library for iteratively encoding large JSON documents piece by piece",
+            "homepage": "http://violet.riimu.net",
+            "keywords": [
+                "encoder",
+                "json",
+                "psr-7",
+                "streaming"
+            ],
+            "support": {
+                "issues": "https://github.com/violet-php/streaming-json-encoder/issues",
+                "source": "https://github.com/violet-php/streaming-json-encoder/tree/v1.1.5"
+            },
+            "time": "2022-12-09T15:47:21+00:00"
         },
         {
             "name": "wikimedia/composer-merge-plugin",
@@ -652,6 +1101,183 @@
                 "source": "https://github.com/wikimedia/composer-merge-plugin/tree/master"
             },
             "time": "2023-04-15T18:48:11+00:00"
+        },
+        {
+            "name": "wp-oop/containers",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-oop/containers.git",
+                "reference": "8b7061b808b9610d116182d6353a3a79eba55d82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-oop/containers/zipball/8b7061b808b9610d116182d6353a3a79eba55d82",
+                "reference": "8b7061b808b9610d116182d6353a3a79eba55d82",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-interface": "^0.3.0-alpha1",
+                "php": "^7.1 | ^8.0",
+                "psr/container": "^1.0"
+            },
+            "conflict": {
+                "vimeo/psalm": "4.5.1 || 4.5.0"
+            },
+            "require-dev": {
+                "brain/monkey": "^2.0",
+                "gmazzap/andrew": "^1.1",
+                "johnpbloch/wordpress-core": "^5.0",
+                "php-stubs/wordpress-stubs": "^5.0",
+                "phpunit/phpunit": "^6.0 | ^7.0 | ^8.0 | ^9.0",
+                "slevomat/coding-standard": "^4.0 | ^5.0 | ^6.0",
+                "vimeo/psalm": "^3.11.7 | ^4.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpOop\\Containers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Ukhanev",
+                    "email": "xedin.unknown@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PSR-11 container implementations that wrap some WP features, for convenience and interoperability.",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "di",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/wp-oop/containers/issues",
+                "source": "https://github.com/wp-oop/containers/tree/0.1.x"
+            },
+            "time": "2022-01-06T11:25:24+00:00"
+        },
+        {
+            "name": "wp-oop/http-client",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-oop/http-client.git",
+                "reference": "7ada041e1de1aa8e8ff785a69467078dee598f74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-oop/http-client/zipball/7ada041e1de1aa8e8ff785a69467078dee598f74",
+                "reference": "7ada041e1de1aa8e8ff785a69467078dee598f74",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0.2",
+                "psr/http-factory-implementation": "*"
+            },
+            "require-dev": {
+                "brain/monkey": "^2.6.1",
+                "johnpbloch/wordpress-core": "6.3",
+                "mikey179/vfsstream": "^1.6.11",
+                "nyholm/psr7": "^1.7",
+                "php-stubs/wordpress-stubs": "6.3",
+                "phpunit/phpunit": "^9.0@stable",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^5.0",
+                "webmozart/path-util": "^2.3@stable"
+            },
+            "suggest": {
+                "nyholm/psr7": "A slim and efficient PSR-7 and PSR-17 implementation"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpOop\\HttpClient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Ukhanev",
+                    "email": "xedin.unknown@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PSR-18 wrapper for the WordPress HTTP API",
+            "support": {
+                "issues": "https://github.com/wp-oop/http-client/issues",
+                "source": "https://github.com/wp-oop/http-client/tree/0.1.x"
+            },
+            "time": "2023-08-29T23:37:03+00:00"
+        },
+        {
+            "name": "wp-oop/transient-cache",
+            "version": "0.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-oop/transient-cache.git",
+                "reference": "774783e36637ddf1682f85649d9ccef8e455df25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-oop/transient-cache/zipball/774783e36637ddf1682f85649d9ccef8e455df25",
+                "reference": "774783e36637ddf1682f85649d9ccef8e455df25",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 | ^8.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "require-dev": {
+                "brain/monkey": "^2.3",
+                "johnpbloch/wordpress-core": "^5.0",
+                "php-stubs/wordpress-stubs": "6.3",
+                "phpunit/phpunit": "^9.0",
+                "slevomat/coding-standard": "^6.0",
+                "vimeo/psalm": "^5.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WpOop\\TransientCache\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Ukhanev",
+                    "email": "xedin.unknown@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PSR-16 wrapper for WP transients.",
+            "support": {
+                "issues": "https://github.com/wp-oop/transient-cache/issues",
+                "source": "https://github.com/wp-oop/transient-cache/tree/v0.2.0-alpha1"
+            },
+            "time": "2023-08-30T16:06:33+00:00"
         },
         {
             "name": "wp-oop/wordpress-interface",
@@ -872,6 +1498,74 @@
                 }
             ],
             "time": "2022-06-21T18:19:50+00:00"
+        },
+        {
+            "name": "ancarda/psr7-string-stream",
+            "version": "dev-patch-1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/XedinUnknown/psr7-string-stream.git",
+                "reference": "b6b3b9e3ca44a619df018fae8a44a3fbb9611b1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/XedinUnknown/psr7-string-stream/zipball/b6b3b9e3ca44a619df018fae8a44a3fbb9611b1a",
+                "reference": "b6b3b9e3ca44a619df018fae8a44a3fbb9611b1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "ancarda/coverage-enforcer": "^1.0",
+                "composer/package-versions-deprecated": "1.11.99.1",
+                "infection/infection": "^0.18.2",
+                "phpstan/phpstan": "^0.12.82",
+                "phpstan/phpstan-phpunit": "^0.12.18",
+                "phpstan/phpstan-strict-rules": "^0.12.9",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ancarda\\Psr7\\StringStream\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "analyze": [
+                    "phpstan"
+                ],
+                "check-coverage": [
+                    "enforce-coverage --minStmtCov 100 var/coverage/coverage.clover.xml"
+                ],
+                "check-style": [
+                    "phpcs"
+                ],
+                "check-tests": [
+                    "infection --min-msi=100"
+                ],
+                "fix-style": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Minimal string based PSR-7 StreamInterface implementation",
+            "support": {
+                "source": "https://github.com/XedinUnknown/psr7-string-stream/tree/patch-1"
+            },
+            "time": "2021-12-04T14:26:34+00:00"
         },
         {
             "name": "antecedent/patchwork",
@@ -1216,12 +1910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "fa1ec24f0ab1efe642671ec15c51a3ab879f59bf"
+                "reference": "1d09200268e7d1052ded8e5da9c73c96a63d18f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/fa1ec24f0ab1efe642671ec15c51a3ab879f59bf",
-                "reference": "fa1ec24f0ab1efe642671ec15c51a3ab879f59bf",
+                "url": "https://api.github.com/repos/composer/semver/zipball/1d09200268e7d1052ded8e5da9c73c96a63d18f5",
+                "reference": "1d09200268e7d1052ded8e5da9c73c96a63d18f5",
                 "shasum": ""
             },
             "require": {
@@ -1290,7 +1984,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-13T15:47:53+00:00"
+            "time": "2023-08-31T12:20:31+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -1761,12 +2455,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "b8e0bb7d8c604046539c1115994632c74dcb361e"
+                "reference": "fab5c135e23fdf40ef7d0e58489a18f581b05e34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/b8e0bb7d8c604046539c1115994632c74dcb361e",
-                "reference": "b8e0bb7d8c604046539c1115994632c74dcb361e",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/fab5c135e23fdf40ef7d0e58489a18f581b05e34",
+                "reference": "fab5c135e23fdf40ef7d0e58489a18f581b05e34",
                 "shasum": ""
             },
             "require": {
@@ -1839,7 +2533,7 @@
                 "security": "https://github.com/mockery/mockery/security/advisories",
                 "source": "https://github.com/mockery/mockery"
             },
-            "time": "2023-08-09T00:03:52+00:00"
+            "time": "2023-08-23T09:14:03+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1959,12 +2653,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "cfc54e30a4f5e5af5f9d9ce86697cfcc5f7e7c24"
+                "reference": "a6303e50c90c355c7eeee2c4a8b27fe8dc8fef1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/cfc54e30a4f5e5af5f9d9ce86697cfcc5f7e7c24",
-                "reference": "cfc54e30a4f5e5af5f9d9ce86697cfcc5f7e7c24",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/a6303e50c90c355c7eeee2c4a8b27fe8dc8fef1d",
+                "reference": "a6303e50c90c355c7eeee2c4a8b27fe8dc8fef1d",
                 "shasum": ""
             },
             "require": {
@@ -2006,9 +2700,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/4.x"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.17.1"
             },
-            "time": "2023-07-30T21:38:32+00:00"
+            "time": "2023-08-13T19:53:39+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2130,22 +2824,66 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
-            "name": "php-stubs/wordpress-stubs",
-            "version": "v6.3.0",
+            "name": "php-stubs/woocommerce-stubs",
+            "version": "v7.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-stubs/wordpress-stubs.git",
-                "reference": "adda7609e71d5f4dc7b87c74f8ec9e3437d2e92c"
+                "url": "https://github.com/php-stubs/woocommerce-stubs.git",
+                "reference": "3a2f522e29451490c357af550227795d2b0fc55a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/adda7609e71d5f4dc7b87c74f8ec9e3437d2e92c",
-                "reference": "adda7609e71d5f4dc7b87c74f8ec9e3437d2e92c",
+                "url": "https://api.github.com/repos/php-stubs/woocommerce-stubs/zipball/3a2f522e29451490c357af550227795d2b0fc55a",
+                "reference": "3a2f522e29451490c357af550227795d2b0fc55a",
+                "shasum": ""
+            },
+            "require": {
+                "php-stubs/wordpress-stubs": "^5.3 || ^6.0"
+            },
+            "require-dev": {
+                "php": "~7.1 || ~8.0",
+                "php-stubs/generator": "^0.8.0"
+            },
+            "suggest": {
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WooCommerce function and class declaration stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/woocommerce-stubs",
+            "keywords": [
+                "PHPStan",
+                "static analysis",
+                "woocommerce",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/woocommerce-stubs/issues",
+                "source": "https://github.com/php-stubs/woocommerce-stubs/tree/v7.9.0"
+            },
+            "time": "2023-07-17T22:41:38+00:00"
+        },
+        {
+            "name": "php-stubs/wordpress-stubs",
+            "version": "v6.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wordpress-stubs.git",
+                "reference": "c10ca821b585cbadba1a0c98cf2faf8b2def55eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/c10ca821b585cbadba1a0c98cf2faf8b2def55eb",
+                "reference": "c10ca821b585cbadba1a0c98cf2faf8b2def55eb",
                 "shasum": ""
             },
             "require-dev": {
-                "nikic/php-parser": "^4.13",
-                "php": "^7.4 || ~8.0.0",
+                "nikic/php-parser": "< 4.12.0",
+                "php": "~7.3 || ~8.0",
                 "php-stubs/generator": "^0.8.3",
                 "phpdocumentor/reflection-docblock": "^5.3",
                 "phpstan/phpstan": "^1.10.12",
@@ -2153,6 +2891,7 @@
             },
             "suggest": {
                 "paragonie/sodium_compat": "Pure PHP implementation of libsodium",
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
                 "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
             },
             "type": "library",
@@ -2169,9 +2908,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-stubs/wordpress-stubs/issues",
-                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.3.0"
+                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.0.4"
             },
-            "time": "2023-08-10T16:34:11+00:00"
+            "time": "2023-05-18T04:34:47+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2397,12 +3136,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "9e1baee3a7525530f5600035759ce754a8b3750b"
+                "reference": "fe53daa0f3542d22cff8336de5d15ba1213ea66f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9e1baee3a7525530f5600035759ce754a8b3750b",
-                "reference": "9e1baee3a7525530f5600035759ce754a8b3750b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/fe53daa0f3542d22cff8336de5d15ba1213ea66f",
+                "reference": "fe53daa0f3542d22cff8336de5d15ba1213ea66f",
                 "shasum": ""
             },
             "require": {
@@ -2467,7 +3206,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-02T09:00:29+00:00"
+            "time": "2023-08-30T13:01:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2716,12 +3455,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6904cfa5f4a6211e759de8ef36fb51fc939a83fa"
+                "reference": "c7e801e2751a879f3c28aca102a4f4e44a773748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6904cfa5f4a6211e759de8ef36fb51fc939a83fa",
-                "reference": "6904cfa5f4a6211e759de8ef36fb51fc939a83fa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c7e801e2751a879f3c28aca102a4f4e44a773748",
+                "reference": "c7e801e2751a879f3c28aca102a4f4e44a773748",
                 "shasum": ""
             },
             "require": {
@@ -2811,57 +3550,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-08-02T08:56:58+00:00"
-        },
-        {
-            "name": "psr/log",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/log.git",
-                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
-                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for logging libraries",
-            "homepage": "https://github.com/php-fig/log",
-            "keywords": [
-                "log",
-                "psr",
-                "psr-3"
-            ],
-            "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.4"
-            },
-            "time": "2021-05-03T11:20:27+00:00"
+            "time": "2023-08-30T12:23:08+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -3958,12 +4647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "a813c38729aef0034ff7b0f5f0ac54e94ea76804"
+                "reference": "b0ecdf10fa5a15bbf341b6dd75d1b23bd803aaaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/a813c38729aef0034ff7b0f5f0ac54e94ea76804",
-                "reference": "a813c38729aef0034ff7b0f5f0ac54e94ea76804",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b0ecdf10fa5a15bbf341b6dd75d1b23bd803aaaf",
+                "reference": "b0ecdf10fa5a15bbf341b6dd75d1b23bd803aaaf",
                 "shasum": ""
             },
             "require": {
@@ -4008,7 +4697,7 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2023-08-06T23:03:57+00:00"
+            "time": "2023-08-27T15:25:51+00:00"
         },
         {
             "name": "symfony/console",
@@ -4016,12 +4705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "b504a3d266ad2bb632f196c0936ef2af5ff6e273"
+                "reference": "f4f71842f24c2023b91237c72a365306f3c58827"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/b504a3d266ad2bb632f196c0936ef2af5ff6e273",
-                "reference": "b504a3d266ad2bb632f196c0936ef2af5ff6e273",
+                "url": "https://api.github.com/repos/symfony/console/zipball/f4f71842f24c2023b91237c72a365306f3c58827",
+                "reference": "f4f71842f24c2023b91237c72a365306f3c58827",
                 "shasum": ""
             },
             "require": {
@@ -4107,7 +4796,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-19T20:11:33+00:00"
+            "time": "2023-08-07T06:12:30+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -4305,7 +4994,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -4387,7 +5076,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -4472,7 +5161,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -4556,7 +5245,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -4636,7 +5325,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php73/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -4879,12 +5568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "a645331026787b124a86629f821e1685fc4db247"
+                "reference": "cc7ed9586ee82bfe758318ace243c9f1c6f530eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/a645331026787b124a86629f821e1685fc4db247",
-                "reference": "a645331026787b124a86629f821e1685fc4db247",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/cc7ed9586ee82bfe758318ace243c9f1c6f530eb",
+                "reference": "cc7ed9586ee82bfe758318ace243c9f1c6f530eb",
                 "shasum": ""
             },
             "require": {
@@ -4911,6 +5600,9 @@
                 "spatie/array-to-xml": "^2.17.0 || ^3.0",
                 "symfony/console": "^4.1.6 || ^5.0 || ^6.0",
                 "symfony/filesystem": "^5.4 || ^6.0"
+            },
+            "conflict": {
+                "nikic/php-parser": "4.17.0"
             },
             "provide": {
                 "psalm/psalm": "self.version"
@@ -4978,7 +5670,7 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm/tree/5.x"
             },
-            "time": "2023-08-13T04:03:45+00:00"
+            "time": "2023-08-28T10:06:45+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5112,13 +5804,17 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "webmozart/path-util": 0,
-        "php-stubs/wordpress-stubs": 0
+        "php-stubs/wordpress-stubs": 0,
+        "ancarda/psr7-string-stream": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4 | ^8.0"
+        "php": "^7.4 | ^8.0",
+        "ext-fileinfo": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {
+        "ext-json": "*"
+    },
     "plugin-api-version": "2.3.0"
 }

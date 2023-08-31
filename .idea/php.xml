@@ -96,6 +96,18 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
       <path value="$PROJECT_DIR$/vendor/spatie/array-to-xml" />
       <path value="$PROJECT_DIR$/vendor/wpackagist-plugin/woocommerce" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ancarda/psr7-string-stream" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/wp-oop/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/halaxa/json-machine" />
+      <path value="$PROJECT_DIR$/vendor/violet/streaming-json-encoder" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/wp-oop/transient-cache" />
+      <path value="$PROJECT_DIR$/vendor/php-stubs/woocommerce-stubs" />
+      <path value="$PROJECT_DIR$/vendor/wp-oop/containers" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

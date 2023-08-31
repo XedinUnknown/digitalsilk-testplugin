@@ -8,6 +8,7 @@ declare(strict_types=1);
     define('BASE_DIR', $rootDir);
     define('BASE_PATH', "$rootDir/plugin.php");
     define('ABSPATH', '/var/www/html');
+    define('WP_DEBUG', true);
 
     error_reporting(E_ALL | E_STRICT);
 

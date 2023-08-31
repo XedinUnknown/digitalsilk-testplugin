@@ -4,13 +4,13 @@
  *
  * @wordpress-plugin
  *
- * Plugin Name: My WordPress Plugin
+ * Plugin Name: Digital Silk Test Plugin
  * Description: A project skeleton useful for starting a new WordPress plugin
  * Version: 0.1.0-alpha1
- * Author: Me
+ * Author: Anton Ukhanev
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: me-plugin
+ * Text Domain: digitalsilk-testplugin
  * Domain Path: /languages
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -18,6 +18,7 @@
 
 use Dhii\Container\Dictionary;
 use Dhii\Modular\Module\ModuleInterface;
+use DigitalSilk\TestPlugin\BlogOptions;
 use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 use DigitalSilk\TestPlugin\MainModule;
@@ -35,7 +36,10 @@ use DigitalSilk\TestPlugin\MainModule;
         $modules = array_merge((require "$baseDir/src/modules.php")($mainFile, $baseDir), [$appModule]);
 
         # WP APIs
-        require_once( "$wpRootDir/wp-admin/includes/plugin.php" );
+        require_once("$wpRootDir/wp-admin/includes/plugin.php");
+        require_once("$wpRootDir/wp-admin/includes/file.php");
+        require_once("$wpRootDir/wp-admin/includes/image.php");
+
 
         /**
          * Manipulate the list of this plugin's modules.
@@ -49,9 +53,10 @@ use DigitalSilk\TestPlugin\MainModule;
         /** @var callable(iterable<ServiceProviderInterface>, ?array<ContainerInterface>): ContainerInterface $bootstrap */
         $bootstrap = require "$baseDir/src/bootstrap.php";
         $container = $bootstrap($providers, [
+            new BlogOptions(null, uniqid('unlikely-option-value')),
             new Dictionary([
-                'me/plugin/main_file_path' => $mainFile,
-                'me/plugin/basedir' => $baseDir,
+                'digitalsilk/testplugin/main_file_path' => $mainFile,
+                'digitalsilk/testplugin/basedir' => $baseDir,
                 'wp/core/abspath' => $wpRootDir,
             ]),
         ]);

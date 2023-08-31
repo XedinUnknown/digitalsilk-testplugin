@@ -21,10 +21,10 @@ class MainModuleTest extends AbstractModularTestCase
     {
         $this->mockPluginFunctions();
         $appContainer = $this->bootstrapModules([new Subject(BASE_PATH, BASE_DIR)],[
-            'me/plugin/main_file_path' => new Value(BASE_PATH),
+            'digitalsilk/testplugin/main_file_path' => new Value(BASE_PATH),
         ]);
         $this->assertInstanceOf(ContainerInterface::class, $appContainer);
-        $this->assertInstanceOf(Plugin::class, $appContainer->get('me/plugin/plugin'));
+        $this->assertInstanceOf(Plugin::class, $appContainer->get('digitalsilk/testplugin/plugin'));
         $this->assertFalse($appContainer->has(uniqid('non-existing-service')));
     }
 }
