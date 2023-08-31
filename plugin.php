@@ -18,6 +18,7 @@
 
 use Dhii\Container\Dictionary;
 use Dhii\Modular\Module\ModuleInterface;
+use DigitalSilk\TestPlugin\BlogOptions;
 use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 use DigitalSilk\TestPlugin\MainModule;
@@ -52,6 +53,7 @@ use DigitalSilk\TestPlugin\MainModule;
         /** @var callable(iterable<ServiceProviderInterface>, ?array<ContainerInterface>): ContainerInterface $bootstrap */
         $bootstrap = require "$baseDir/src/bootstrap.php";
         $container = $bootstrap($providers, [
+            new BlogOptions(null, uniqid('unlikely-option-value')),
             new Dictionary([
                 'me/plugin/main_file_path' => $mainFile,
                 'me/plugin/basedir' => $baseDir,

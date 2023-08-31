@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17202899b2423e174f14979b96f38b71",
+    "content-hash": "9ee4ae487cc4d689d5eb6d38e70b149a",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -1051,6 +1051,68 @@
                 "source": "https://github.com/wikimedia/composer-merge-plugin/tree/master"
             },
             "time": "2023-04-15T18:48:11+00:00"
+        },
+        {
+            "name": "wp-oop/containers",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-oop/containers.git",
+                "reference": "8b7061b808b9610d116182d6353a3a79eba55d82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-oop/containers/zipball/8b7061b808b9610d116182d6353a3a79eba55d82",
+                "reference": "8b7061b808b9610d116182d6353a3a79eba55d82",
+                "shasum": ""
+            },
+            "require": {
+                "dhii/collections-interface": "^0.3.0-alpha1",
+                "php": "^7.1 | ^8.0",
+                "psr/container": "^1.0"
+            },
+            "conflict": {
+                "vimeo/psalm": "4.5.1 || 4.5.0"
+            },
+            "require-dev": {
+                "brain/monkey": "^2.0",
+                "gmazzap/andrew": "^1.1",
+                "johnpbloch/wordpress-core": "^5.0",
+                "php-stubs/wordpress-stubs": "^5.0",
+                "phpunit/phpunit": "^6.0 | ^7.0 | ^8.0 | ^9.0",
+                "slevomat/coding-standard": "^4.0 | ^5.0 | ^6.0",
+                "vimeo/psalm": "^3.11.7 | ^4.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WpOop\\Containers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Ukhanev",
+                    "email": "xedin.unknown@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PSR-11 container implementations that wrap some WP features, for convenience and interoperability.",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "di",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/wp-oop/containers/issues",
+                "source": "https://github.com/wp-oop/containers/tree/0.1.x"
+            },
+            "time": "2022-01-06T11:25:24+00:00"
         },
         {
             "name": "wp-oop/http-client",

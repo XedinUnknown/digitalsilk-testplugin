@@ -107,6 +107,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/wp-oop/transient-cache" />
       <path value="$PROJECT_DIR$/vendor/php-stubs/woocommerce-stubs" />
+      <path value="$PROJECT_DIR$/vendor/wp-oop/containers" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
