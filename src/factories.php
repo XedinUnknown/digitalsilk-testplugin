@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Dhii\Package\Version\StringVersionFactoryInterface;
 use Dhii\Services\Factories\Alias;
+use Dhii\Services\Factories\GlobalVar;
 use Dhii\Services\Factories\Value;
 use Dhii\Services\Factory;
 use Dhii\Versions\StringVersionFactory;
@@ -26,6 +27,7 @@ return function (): array {
         ], function (StringVersionFactoryInterface $factory): FilePathPluginFactoryInterface {
             return new FilePathPluginFactory($factory);
         }),
+        'wp/core/wpdb' => new GlobalVar('wpdb'),
         'digitalsilk/testplugin/version_factory' => new Alias('package/version_factory'),
         'package/version_factory' => new Factory([
         ], function () {
@@ -35,6 +37,7 @@ return function (): array {
         #####################################################
         # Module Wiring
         #####################################################
+        'digitalsilk/dummyjson/wpdb' => new Alias('wp/core/wpdb'),
         'digitalsilk/dummyjson/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
         'digitalsilk/dummyjson/api/auth/username' => new Alias('digitalsilk/wc-import/dummyjson/username'),
         'digitalsilk/dummyjson/api/auth/password' => new Alias('digitalsilk/wc-import/dummyjson/password'),
