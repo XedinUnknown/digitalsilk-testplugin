@@ -32,7 +32,7 @@ use WpOop\TransientCache\CachePoolFactoryInterface;
 
 return function (string $modDir): array {
     return [
-        'digitalsilk/dummyjson/is_debug' => new Value(true),
+        'digitalsilk/dummyjson/is_debug' => new Value(false),
         'digitalsilk/dummyjson/tempdir' => new Factory([], fn() => sys_get_temp_dir()),
         'digitalsilk/dummyjson/wpdb' => new GlobalVar('wpdb'),
         'digitalsilk/dummyjson/http/psr17_factory' => new Factory([], function (): Psr17Factory {
