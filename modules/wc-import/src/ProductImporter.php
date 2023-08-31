@@ -25,6 +25,20 @@ class ProductImporter implements ProductImporterInterface
      * @var string
      */
     protected const TAXONOMY_NAME_PRODUCT_CAT = 'product_cat';
+    /**
+     * phpcs:ignore SlevomatCodingStandard.TypeHints.UselessConstantTypeHint.UselessVarAnnotation
+     * @var string
+     */
+    protected const TAXONOMY_NAME_BRAND = 'brand';
+
+    protected string $taxonomyNameCategories;
+    protected string $taxonomyNameBrands;
+
+    public function __construct(string $taxonomyNameCategories, string $taxonomyNameBrands)
+    {
+        $this->taxonomyNameCategories = $taxonomyNameCategories;
+        $this->taxonomyNameBrands = $taxonomyNameBrands;
+    }
 
     /**
      * @inheritDoc
@@ -47,8 +61,15 @@ class ProductImporter implements ProductImporterInterface
         // Category
         $categorySlug = $product->getCategory();
         if (strlen($categorySlug)) {
-            $category = $this->getTermForSlug($categorySlug, static::TAXONOMY_NAME_PRODUCT_CAT);
+            $category = $this->getTermForSlug($categorySlug, $this->taxonomyNameCategories);
             $wcProduct->set_category_ids([$category->term_id]);
+        }
+
+        // Brand
+        $brandSlug = $product->getBrand();
+        if (strlen($brandSlug)) {
+            $brand = $this->getTermForSlug($brandSlug, $this->taxonomyNameBrands);
+            // Assigned after product is saved, because it needs object ID
         }
 
         // Price
@@ -87,6 +108,11 @@ class ProductImporter implements ProductImporterInterface
 //        $wcProduct->update_meta_data('original_id', $product->getId());
 
         $wcProduct->save();
+
+        // Operations that require product ID
+        if ($brand) {
+            wp_set_object_terms($wcProduct->get_id(), $brand->term_id, $this->taxonomyNameBrands);
+        }
 
         return $wcProduct;
     }

@@ -6,7 +6,6 @@ namespace DigitalSilk\WcImport;
 
 use Dhii\Container\ServiceProvider;
 use Dhii\Modular\Module\ModuleInterface;
-use DigitalSilk\DummyJson\Command\ListProductsCommandInterface;
 use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
@@ -34,5 +33,16 @@ class WcImportModule implements ModuleInterface
      */
     public function run(ContainerInterface $c): void
     {
+        add_action('init', function () use ($c) {
+            $brandTaxonomyKey = 'brand';
+            $productObjectType = 'product';
+            /** @var string $brandTaxonomyName */
+            $brandTaxonomyName = $c->get("digitalsilk/wc-import/taxonomy/$brandTaxonomyKey/name");
+            /** @var array<string, mixed> $brandTaxonomyArgs */
+            $brandTaxonomyArgs = $c->get("digitalsilk/wc-import/taxonomy/$brandTaxonomyKey/settings");
+
+            register_taxonomy( $brandTaxonomyName, $productObjectType, $brandTaxonomyArgs );
+            register_taxonomy_for_object_type( $brandTaxonomyName, $productObjectType );
+        });
     }
 }
