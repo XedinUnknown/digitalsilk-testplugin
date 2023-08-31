@@ -35,7 +35,10 @@ use DigitalSilk\TestPlugin\MainModule;
         $modules = array_merge((require "$baseDir/src/modules.php")($mainFile, $baseDir), [$appModule]);
 
         # WP APIs
-        require_once( "$wpRootDir/wp-admin/includes/plugin.php" );
+        require_once("$wpRootDir/wp-admin/includes/plugin.php");
+        require_once("$wpRootDir/wp-admin/includes/file.php");
+        require_once("$wpRootDir/wp-admin/includes/image.php");
+
 
         /**
          * Manipulate the list of this plugin's modules.

@@ -1,0 +1,30 @@
+{
+  "name": "digitalsilk/wc-import",
+  "description": "An importer for WooCommerce entities",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton Ukhanev",
+      "email": "xedin.unknown@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.4 | ^8.0",
+    "ext-fileinfo": "*",
+    "dhii/module-interface": "^0.3-alpha1",
+    "dhii/containers": "^0.1",
+    "dhii/services": "^0.1.1-alpha3"
+  },
+  "autoload": {
+    "psr-4": {
+      "DigitalSilk\\WcImport\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DigitalSilk\\WcImport\\Test\\": "tests/phpunit"
+    }
+  }
+}
