@@ -6,4 +6,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.1.0-alpha1] - 2023-09-01
 Initial release.
