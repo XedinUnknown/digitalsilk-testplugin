@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace DigitalSilk\TestPlugin\Test\Func;
 
 use DigitalSilk\TestPlugin\Test\PluginFunctionMocks;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Container\ContainerInterface;
 use DigitalSilk\TestPlugin\Test\AbstractApplicationTestCase;
+use wpdb;
 
 class AppModuleTest extends AbstractApplicationTestCase
 {
@@ -23,14 +25,18 @@ class AppModuleTest extends AbstractApplicationTestCase
 
             $container = $this->bootstrapApplication(
                 [
-                    'me/plugin/main_file_path' => function () {
+                    'digitalsilk/testplugin/main_file_path' => function () {
                         return BASE_PATH;
                     },
-                    'me/plugin/basedir' => function () {
+                    'digitalsilk/testplugin/basedir' => function () {
                         return BASE_DIR;
                     },
                     'wp/core/abspath' => function () {
                         return ABSPATH;
+                    },
+                    'wp/core/wpdb' => function () {
+                        var_dump(__METHOD__);
+                        return $this->createWpdb();
                     },
 
                     $serviceName => function () use ($factoryValue): string {
@@ -49,5 +55,16 @@ class AppModuleTest extends AbstractApplicationTestCase
             $serviceValue = $container->get($serviceName);
             $this->assertEquals("{$factoryValue}{$valueSeparator}{$extensionValue}", $serviceValue);
         }
+    }
+
+    /**
+     * @return wpdb&MockObject
+     */
+    protected function createWpdb(): wpdb
+    {
+        $mock = $this->getMockBuilder(wpdb::class)
+            ->getMock();
+
+        return $mock;
     }
 }
