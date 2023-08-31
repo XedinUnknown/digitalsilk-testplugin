@@ -56,7 +56,7 @@ class RunImport
      *
      * @throws Exception If problem importing.
      */
-    public function __invoke(int $processedCount)
+    public function __invoke(int $processedCount): void
     {
         $isDebug = $this->isDebug;
         $listCommand = $this->listCommand;
@@ -82,7 +82,6 @@ class RunImport
         $i = 0; // Processed in this batch
         $successfulCount = 0; // Imported successfully
         foreach ($products as $product) {
-
             try {
                 $wcProduct = $importer->importProduct($product);
             } catch (Exception $e) {
@@ -127,6 +126,5 @@ class RunImport
         }
 
         $logger->info('Nothing more to do');
-
     }
 }

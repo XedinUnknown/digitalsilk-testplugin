@@ -16,6 +16,9 @@ class CustomContextLogger implements LoggerInterface
 {
     protected array $defaultContext;
 
+    /**
+     * @param array<mixed> $defaultContext
+     */
     public function __construct(array $defaultContext)
     {
         $this->defaultContext = $defaultContext;
@@ -34,56 +37,64 @@ class CustomContextLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
-    public function emergency( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::EMERGENCY, $message, $context );
+    public function emergency($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::EMERGENCY, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function alert( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::ALERT, $message, $context );
+    public function alert($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::ALERT, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function critical( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::CRITICAL, $message, $context );
+    public function critical($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::CRITICAL, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function error( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::ERROR, $message, $context );
+    public function error($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::ERROR, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function warning( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::WARNING, $message, $context );
+    public function warning($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::WARNING, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function notice( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::NOTICE, $message, $context );
+    public function notice($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::NOTICE, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function info( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::INFO, $message, $context );
+    public function info($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::INFO, $message, $context);
     }
 
     /**
      * @inheritDoc
      */
-    public function debug( $message, $context = array() ) {
-        $this->log( WC_Log_Levels::DEBUG, $message, $context );
+    public function debug($message, $context = array())
+    {
+        $this->log(WC_Log_Levels::DEBUG, $message, $context);
     }
 }

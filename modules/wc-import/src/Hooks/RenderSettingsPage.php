@@ -22,7 +22,7 @@ class RenderSettingsPage
         $this->importLimit = $importLimit;
     }
 
-    public function __invoke()
+    public function __invoke(): void
     {
         $handlerUrl = admin_url('admin-post.php');
         $actionPrefix = 'digitalsilk-testplugin';
@@ -58,7 +58,12 @@ class RenderSettingsPage
                         <label for="batch_size"><?= __('Batch Size', 'digitalsilk-testplugin') ?></label>
                     </th>
                     <td>
-                        <input type="number" min="0" max="100" name="batch_size" id="batch_size" value="<?= $this->batchSize ?>"/>
+                        <input type="number"
+                               min="0"
+                               max="100"
+                               name="batch_size"
+                               id="batch_size"
+                               value="<?= $this->batchSize ?>"/>
                     </td>
                 </tr>
                 <tr>
@@ -66,12 +71,19 @@ class RenderSettingsPage
                         <label for="import_limit"><?= __('Import Limit', 'digitalsilk-testplugin') ?></label>
                     </th>
                     <td>
-                        <input type="number" min="0" name="import_limit" id="import_limit" value="<?= $this->importLimit ?>"/>
+                        <input type="number"
+                               min="0"
+                               name="import_limit"
+                               id="import_limit"
+                               value="<?= $this->importLimit ?>"/>
                     </td>
                 </tr>
             </table>
 
-            <input class="button button-primary" type="submit" name="submit" value="<?= __('Save', 'digitalsilk-testplugin') ?>" />
+            <input class="button button-primary"
+                   type="submit"
+                   name="submit"
+                   value="<?= __('Save', 'digitalsilk-testplugin') ?>"/>
         </form>
 
         <form action="<?= esc_url($handlerUrl) ?>" method="POST">
@@ -81,7 +93,10 @@ class RenderSettingsPage
             <table class="form-table" role="presentation">
                 <tr>
                     <th scope="row">
-                        <input class="button button-primary" type="submit" name="submit" value="<?= __('Import Now!', 'digitalsilk-testplugin') ?>" />
+                        <input class="button button-primary"
+                               type="submit"
+                               name="submit"
+                               value="<?= __('Import Now!', 'digitalsilk-testplugin') ?>"/>
                     </th>
                 </tr>
             </table>

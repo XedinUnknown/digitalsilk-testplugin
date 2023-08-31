@@ -16,7 +16,7 @@ class SaveSettings
     use VerifyNonceTrait;
     use RefreshOrDieTrait;
 
-    public function __invoke()
+    public function __invoke(): void
     {
         try {
             $this->verifyNonce('digitalsilk-testplugin-settings-save');

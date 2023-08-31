@@ -141,11 +141,11 @@ class ProductImporter implements ProductImporterInterface
         }
 
         $file = array(
-            'name'     => basename( $url ),
+            'name' => basename($url),
             'tmp_name' => $tempFilePath,
         );
 
-        $contentType = mime_content_type( $tempFilePath );
+        $contentType = mime_content_type($tempFilePath);
         if (is_string($contentType)) {
             $file['type'] = $contentType;
         }
@@ -156,7 +156,7 @@ class ProductImporter implements ProductImporterInterface
         }
 
         $sideload = wp_handle_sideload($file, ['test_form' => false]);
-        if(!empty($sideload[ 'error' ])) {
+        if (!empty($sideload['error'])) {
             throw new UnexpectedValueException((string) $sideload['error']);
         }
 
@@ -174,7 +174,7 @@ class ProductImporter implements ProductImporterInterface
             $filePath
         );
 
-        if( $attachmentId instanceof WP_Error || $attachmentId === 0 ) {
+        if ($attachmentId instanceof WP_Error || $attachmentId === 0) {
             $message = $attachmentId instanceof WP_Error
                 ? $attachmentId->get_error_message()
                 : sprintf(

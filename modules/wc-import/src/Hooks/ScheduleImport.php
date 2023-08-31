@@ -18,11 +18,16 @@ class ScheduleImport
 {
     use RefreshOrDieTrait;
 
-    public function __invoke(int $processedThisImport = 0, ?DateTimeInterface $when = null)
+    public function __invoke(int $processedThisImport = 0, ?DateTimeInterface $when = null): void
     {
         $scheduleTime = $when ?? new DateTimeImmutable("now", new DateTimeZone('UTC'));
         /** @var true|WP_Error $isScheduled */
-        $isScheduled = wp_schedule_single_event($scheduleTime->getTimestamp(), 'digitalsilk_testplugin_run_import', [$processedThisImport], true);
+        $isScheduled = wp_schedule_single_event(
+            $scheduleTime->getTimestamp(),
+            'digitalsilk_testplugin_run_import',
+            [$processedThisImport],
+            true
+        );
         if ($isScheduled instanceof WP_Error) {
             throw new RuntimeException(sprintf(
                 'Could not schedule import at "%1$s"',

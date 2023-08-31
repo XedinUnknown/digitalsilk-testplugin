@@ -21,7 +21,7 @@ class AddNavigation
         $this->pageSlug = $pageSlug;
     }
 
-    public function __invoke()
+    public function __invoke(): void
     {
         add_submenu_page(
             'woocommerce',
