@@ -5,6 +5,9 @@ declare(strict_types=1);
 use Dhii\Services\Factories\Constructor;
 use Dhii\Services\Factories\Value;
 use Dhii\Services\Factory;
+use DigitalSilk\DummyJson\Command\ListProductsCommandInterface;
+use DigitalSilk\DummyJson\Data\ProductsSelectResult;
+use DigitalSilk\DummyJson\Data\SelectResultInterface;
 use DigitalSilk\WcImport\CustomContextLogger;
 use DigitalSilk\WcImport\Hooks\AddNavigation;
 use DigitalSilk\WcImport\Hooks\AddTaxonomy;
@@ -59,7 +62,7 @@ return function (string $modDir): array {
         'digitalsilk/wc-import/hooks/schedule_immediate_import' => new Constructor(ScheduleImport::class),
         'digitalsilk/wc-import/hooks/run_import' => new Constructor(RunImport::class, [
             'digitalsilk/wc-import/is_debug',
-            'digitalsilk/dummyjson/api/command/products/list',
+            'digitalsilk/wc-import/list_products_command',
             'digitalsilk/wc-import/importer/product',
             'digitalsilk/wc-import/batch_size',
             'digitalsilk/wc-import/logging/import_logger',
@@ -70,6 +73,18 @@ return function (string $modDir): array {
             'digitalsilk/wc-import/taxonomy/brand/settings',
         ], function (string $name, array $args): AddTaxonomy {
             return new AddTaxonomy($name, $args, 'product');
+        }),
+        // No-op
+        'digitalsilk/wc-import/list_products_command' => new Factory([], function(): ListProductsCommandInterface {
+            return new class implements ListProductsCommandInterface {
+                public function listProducts(
+                    ?string $keyphrase = null,
+                    int $limit = 0,
+                    int $offset = 0
+                ): SelectResultInterface {
+                    return new ProductsSelectResult(['products' => [], 'total' => 0]);
+                }
+            };
         }),
     ];
 };
