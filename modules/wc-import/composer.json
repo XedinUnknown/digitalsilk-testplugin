@@ -19,6 +19,7 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0",
+    "php-stubs/wordpress-stubs": "6.0.x@stable",
     "wpackagist-plugin/woocommerce": "7.9.0",
     "php-stubs/woocommerce-stubs": "7.9.0"
   },
