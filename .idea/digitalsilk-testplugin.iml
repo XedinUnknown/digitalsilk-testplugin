@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/tests/phpunit" isTestSource="true" packagePrefix="DigitalSilk\DummyJson\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/src" isTestSource="false" packagePrefix="DigitalSilk\DummyJson\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/dummyjson/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/wc-import/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

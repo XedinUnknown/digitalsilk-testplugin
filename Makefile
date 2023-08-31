@@ -13,6 +13,7 @@ FILES := $(filter-out $(SRC_DIR)/. $(SRC_DIR)/.., $(FILES))
 
 # List files to exclude, including DIST_DIR
 EXCLUDED_FILES := ./wordpress
+EXCLUDED_FILES += ./auth.json
 EXCLUDED_FILES += $(BUILD_DIR)
 
 # Exclude files listed in EXCLUDED_FILES from FILES
