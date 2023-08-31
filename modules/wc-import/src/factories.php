@@ -22,7 +22,7 @@ use Psr\Log\LoggerInterface;
 return function (string $modDir): array {
     return [
         'digitalsilk/wc-import/is_debug' => new Value(false),
-        'digitalsilk/wc-import/batch_size' => new Value(3),
+        'digitalsilk/wc-import/batch_size' => new Value(10),
         'digitalsilk/wc-import/logging/import_log_name' => new Value('digitalsilk-wc-import'),
         'digitalsilk/wc-import/logging/import_logger' => new Factory([
             'digitalsilk/wc-import/logging/import_log_name',
