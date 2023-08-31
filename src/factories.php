@@ -43,6 +43,6 @@ return function (): array {
         'digitalsilk/dummyjson/api/auth/password' => new Alias('digitalsilk/wc-import/dummyjson/password'),
 
         'digitalsilk/wc-import/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
-        'digitalsilk/wc-import/list_products_command' => new Alias('digitalsilk/dummyjson/api/command/products/list'),
+        'digitalsilk/wc-import/list_products_command' => new Alias('digitalsilk/dummyjson/api/command/products/list')
     ];
 };
