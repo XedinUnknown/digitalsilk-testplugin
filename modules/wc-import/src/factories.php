@@ -23,6 +23,7 @@ return function (string $modDir): array {
     return [
         'digitalsilk/wc-import/is_debug' => new Value(false),
         'digitalsilk/wc-import/batch_size' => new Value(10),
+        'digitalsilk/wc-import/import_limit' => new Value(0),
         'digitalsilk/wc-import/logging/import_log_name' => new Value('digitalsilk-wc-import'),
         'digitalsilk/wc-import/logging/import_logger' => new Factory([
             'digitalsilk/wc-import/logging/import_log_name',
@@ -52,9 +53,11 @@ return function (string $modDir): array {
             'digitalsilk/wc-import/dummyjson/username',
             'digitalsilk/wc-import/dummyjson/password',
             'digitalsilk/wc-import/batch_size',
-        ], function (string $username, string $password, $batchSize) {
+            'digitalsilk/wc-import/import_limit',
+        ], function (string $username, string $password, $batchSize, $importLimit) {
             $batchSize = intval($batchSize);
-            return new RenderSettingsPage($username, $password, $batchSize);
+            $importLimit = intval($importLimit);
+            return new RenderSettingsPage($username, $password, $batchSize, $importLimit);
         }),
         'digitalsilk/wc-import/hooks/add_navigation' => new Factory([
             'digitalsilk/wc-import/hooks/render_settings_page',
@@ -69,6 +72,7 @@ return function (string $modDir): array {
             'digitalsilk/wc-import/list_products_command',
             'digitalsilk/wc-import/importer/product',
             'digitalsilk/wc-import/batch_size',
+            'digitalsilk/wc-import/import_limit',
             'digitalsilk/wc-import/logging/import_logger',
             'digitalsilk/wc-import/hooks/schedule_immediate_import',
         ],
@@ -77,15 +81,19 @@ return function (string $modDir): array {
                 ListProductsCommandInterface $listProductsCommand,
                 ProductImporterInterface $productImporter,
                 $batchSize,
+                $importLimit,
                 LoggerInterface $logger,
                 ScheduleImport $scheduleImportHook
             ): RunImport {
                 $batchSize = intval($batchSize);
+                $importLimit = intval($importLimit);
+
                 return new RunImport(
                     $isDebug,
                     $listProductsCommand,
                     $productImporter,
                     $batchSize,
+                    $importLimit,
                     $logger,
                     $scheduleImportHook
                 );

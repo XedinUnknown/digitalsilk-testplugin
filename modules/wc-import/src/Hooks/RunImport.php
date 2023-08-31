@@ -21,6 +21,7 @@ class RunImport
     protected ListProductsCommandInterface $listCommand;
     protected ProductImporterInterface $importer;
     protected int $batchSize;
+    protected int $importLimit;
     protected LoggerInterface $logger;
     /** @var ScheduleHook */
     protected $scheduleHook;
@@ -33,6 +34,7 @@ class RunImport
         ListProductsCommandInterface $listCommand,
         ProductImporterInterface $importer,
         int $batchSize,
+        int $importLimit,
         LoggerInterface $logger,
         callable $scheduleHook
     ) {
@@ -40,6 +42,7 @@ class RunImport
         $this->listCommand = $listCommand;
         $this->importer = $importer;
         $this->batchSize = $batchSize;
+        $this->importLimit = $importLimit;
         $this->logger = $logger;
         $this->scheduleHook = $scheduleHook;
     }
@@ -61,9 +64,13 @@ class RunImport
         $batchSize = $this->batchSize;
         $logger = $this->logger;
         $limit = $batchSize;
+        $importLimit = $this->importLimit;
         $offset = $processedCount;
 
-        $logger->info(sprintf('Starting import of up to %1$d products', $batchSize));
+        if (!$processedCount) {
+            $logger->info(sprintf('Starting import of up to %1$d products', $importLimit));
+        }
+        $logger->info(sprintf('Starting batch of up to %1$d products', $batchSize));
 
         try {
             $products = $listCommand->listProducts(null, $limit, $offset);
@@ -75,8 +82,6 @@ class RunImport
         $i = 0; // Processed in this batch
         $successfulCount = 0; // Imported successfully
         foreach ($products as $product) {
-            ++$i;
-            ++$processedCount;
 
             try {
                 $wcProduct = $importer->importProduct($product);
@@ -85,10 +90,18 @@ class RunImport
                 continue;
             }
 
+            ++$i;
+            ++$processedCount;
             ++$successfulCount;
+
             $logger->notice(
                 sprintf('Imported product "%1$s" with ID #%2$d', $wcProduct->get_name(), $wcProduct->get_id())
             );
+
+            if ($processedCount === $importLimit) {
+                $logger->warning(sprintf('Import limit of %1$d items reached; stopping', $importLimit));
+                return;
+            }
         }
 
         // Only available after iteration

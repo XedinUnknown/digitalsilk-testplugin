@@ -27,6 +27,7 @@ class SaveSettings
         $username = $_POST['username'] ?? null;
         $password = $_POST['password'] ?? null;
         $batchSize = $_POST['batch_size'] ?? null;
+        $importLimit = $_POST['import_limit'] ?? null;
 
         if (is_string($username)) {
             update_option('digitalsilk/wc-import/dummyjson/username', $username);
@@ -36,6 +37,9 @@ class SaveSettings
         }
         if (is_numeric($batchSize)) {
             update_option('digitalsilk/wc-import/batch_size', intval($batchSize));
+        }
+        if (is_numeric($importLimit)) {
+            update_option('digitalsilk/wc-import/import_limit', intval($importLimit));
         }
 
         $this->refreshOrDie('Options updated!', 'Success!');

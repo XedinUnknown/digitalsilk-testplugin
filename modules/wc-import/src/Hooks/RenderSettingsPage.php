@@ -12,12 +12,14 @@ class RenderSettingsPage
     protected string $username;
     protected string $password;
     protected int $batchSize;
+    protected int $importLimit;
 
-    public function __construct(string $username, string $password, int $batchSize)
+    public function __construct(string $username, string $password, int $batchSize, int $importLimit)
     {
         $this->username = $username;
         $this->password = $password;
         $this->batchSize = $batchSize;
+        $this->importLimit = $importLimit;
     }
 
     public function __invoke()
@@ -57,6 +59,14 @@ class RenderSettingsPage
                     </th>
                     <td>
                         <input type="number" min="0" max="100" name="batch_size" id="batch_size" value="<?= $this->batchSize ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="import_limit"><?= __('Import Limit', 'digitalsilk-testplugin') ?></label>
+                    </th>
+                    <td>
+                        <input type="number" min="0" name="import_limit" id="import_limit" value="<?= $this->importLimit ?>"/>
                     </td>
                 </tr>
             </table>
