@@ -41,6 +41,5 @@ return function (): array {
 
         'digitalsilk/wc-import/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
         'digitalsilk/wc-import/list_products_command' => new Alias('digitalsilk/dummyjson/api/command/products/list'),
-        'digitalsilk/wc-import/logging/wc_logger' => new Factory([], fn() => wc_get_logger()),
     ];
 };
