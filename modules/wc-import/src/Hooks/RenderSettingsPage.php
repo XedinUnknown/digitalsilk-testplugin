@@ -11,11 +11,13 @@ class RenderSettingsPage
 {
     protected string $username;
     protected string $password;
+    protected int $batchSize;
 
-    public function __construct(string $username, string $password)
+    public function __construct(string $username, string $password, int $batchSize)
     {
         $this->username = $username;
         $this->password = $password;
+        $this->batchSize = $batchSize;
     }
 
     public function __invoke()
@@ -47,6 +49,14 @@ class RenderSettingsPage
                     </th>
                     <td>
                         <input type="password" name="password" id="password" value="<?= $this->password ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="batch_size"><?= __('Batch Size', 'digitalsilk-testplugin') ?></label>
+                    </th>
+                    <td>
+                        <input type="number" min="0" max="100" name="batch_size" id="batch_size" value="<?= $this->batchSize ?>"/>
                     </td>
                 </tr>
             </table>

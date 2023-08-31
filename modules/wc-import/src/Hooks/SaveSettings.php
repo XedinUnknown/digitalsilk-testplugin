@@ -26,12 +26,16 @@ class SaveSettings
 
         $username = $_POST['username'] ?? null;
         $password = $_POST['password'] ?? null;
+        $batchSize = $_POST['batch_size'] ?? null;
 
         if (is_string($username)) {
             update_option('digitalsilk/wc-import/dummyjson/username', $username);
         }
         if (is_string($password)) {
             update_option('digitalsilk/wc-import/dummyjson/password', $password);
+        }
+        if (is_numeric($batchSize)) {
+            update_option('digitalsilk/wc-import/batch_size', intval($batchSize));
         }
 
         $this->refreshOrDie('Options updated!', 'Success!');

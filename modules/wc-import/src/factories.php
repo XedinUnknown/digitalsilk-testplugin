@@ -48,10 +48,14 @@ return function (string $modDir): array {
         'digitalsilk/wc-import/dummyjson/username' => new Value(''),
         'digitalsilk/wc-import/dummyjson/password' => new Value(''),
         'digitalsilk/wc-import/hooks/save_settings' => new Constructor(SaveSettings::class),
-        'digitalsilk/wc-import/hooks/render_settings_page' => new Constructor(RenderSettingsPage::class, [
+        'digitalsilk/wc-import/hooks/render_settings_page' => new Factory([
             'digitalsilk/wc-import/dummyjson/username',
             'digitalsilk/wc-import/dummyjson/password',
-        ]),
+            'digitalsilk/wc-import/batch_size',
+        ], function (string $username, string $password, $batchSize) {
+            $batchSize = intval($batchSize);
+            return new RenderSettingsPage($username, $password, $batchSize);
+        }),
         'digitalsilk/wc-import/hooks/add_navigation' => new Factory([
             'digitalsilk/wc-import/hooks/render_settings_page',
         ], function (RenderSettingsPage $renderSettingsPageHook) {
@@ -60,14 +64,32 @@ return function (string $modDir): array {
             return new AddNavigation($renderSettingsPageHook, $pageTitle, $pageSlug);
         }),
         'digitalsilk/wc-import/hooks/schedule_immediate_import' => new Constructor(ScheduleImport::class),
-        'digitalsilk/wc-import/hooks/run_import' => new Constructor(RunImport::class, [
+        'digitalsilk/wc-import/hooks/run_import' => new Factory([
             'digitalsilk/wc-import/is_debug',
             'digitalsilk/wc-import/list_products_command',
             'digitalsilk/wc-import/importer/product',
             'digitalsilk/wc-import/batch_size',
             'digitalsilk/wc-import/logging/import_logger',
             'digitalsilk/wc-import/hooks/schedule_immediate_import',
-        ]),
+        ],
+            function (
+                bool $isDebug,
+                ListProductsCommandInterface $listProductsCommand,
+                ProductImporterInterface $productImporter,
+                $batchSize,
+                LoggerInterface $logger,
+                ScheduleImport $scheduleImportHook
+            ): RunImport {
+                $batchSize = intval($batchSize);
+                return new RunImport(
+                    $isDebug,
+                    $listProductsCommand,
+                    $productImporter,
+                    $batchSize,
+                    $logger,
+                    $scheduleImportHook
+                );
+            }),
         'digitalsilk/wc-import/hooks/add_brand_taxonomy' => new Factory([
             'digitalsilk/wc-import/taxonomy/brand/name',
             'digitalsilk/wc-import/taxonomy/brand/settings',
