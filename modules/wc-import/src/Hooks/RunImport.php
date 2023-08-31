@@ -7,6 +7,7 @@ namespace DigitalSilk\WcImport\Hooks;
 use DigitalSilk\DummyJson\Command\ListProductsCommandInterface;
 use DigitalSilk\WcImport\ProductImporterInterface;
 use Exception;
+use Psr\Log\LoggerInterface;
 use WC_Logger_Interface;
 
 /**
@@ -20,7 +21,7 @@ class RunImport
     protected ListProductsCommandInterface $listCommand;
     protected ProductImporterInterface $importer;
     protected int $batchSize;
-    protected WC_Logger_Interface $logger;
+    protected LoggerInterface $logger;
     /** @var ScheduleHook */
     protected $scheduleHook;
 
@@ -32,7 +33,7 @@ class RunImport
         ListProductsCommandInterface $listCommand,
         ProductImporterInterface $importer,
         int $batchSize,
-        WC_Logger_Interface $logger,
+        LoggerInterface $logger,
         callable $scheduleHook
     ) {
         $this->isDebug = $isDebug;

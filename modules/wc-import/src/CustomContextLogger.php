@@ -4,23 +4,20 @@ declare(strict_types=1);
 
 namespace DigitalSilk\WcImport;
 
-use Exception;
-use WC_Logger_Interface;
+use Psr\Log\LoggerInterface;
 use WC_Log_Levels;
 
 /**
- * A logger decorator that allows specifying a default context.
+ * A standards-compliant WC logger that allows specifying a default context.
  *
  * This context will be merged non-recursively with each context provided for logging.
  */
-class CustomContextLogger implements WC_Logger_Interface
+class CustomContextLogger implements LoggerInterface
 {
-    protected WC_Logger_Interface $logger;
     protected array $defaultContext;
 
-    public function __construct(WC_Logger_Interface $logger, array $defaultContext)
+    public function __construct(array $defaultContext)
     {
-        $this->logger = $logger;
         $this->defaultContext = $defaultContext;
     }
 
@@ -29,7 +26,8 @@ class CustomContextLogger implements WC_Logger_Interface
      */
     public function add($handle, $message, $level = WC_Log_Levels::NOTICE)
     {
-        $this->logger->add($handle, $message, $level);
+        $logger = wc_get_logger();
+        $logger->add($handle, $message, $level);
     }
 
     /**
@@ -38,7 +36,8 @@ class CustomContextLogger implements WC_Logger_Interface
     public function log($level, $message, $context = [])
     {
         $context = array_merge($this->defaultContext, $context);
-        $this->logger->log($level, $message, $context);
+        $logger = wc_get_logger();
+        $logger->log($level, $message, $context);
     }
 
     /**

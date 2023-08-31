@@ -15,7 +15,8 @@
     "ext-fileinfo": "*",
     "dhii/module-interface": "^0.3-alpha1",
     "dhii/containers": "^0.1",
-    "dhii/services": "^0.1.1-alpha3"
+    "dhii/services": "^0.1.1-alpha3",
+    "psr/log": "^1.1.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0",

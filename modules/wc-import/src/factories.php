@@ -14,18 +14,17 @@ use DigitalSilk\WcImport\Hooks\SaveSettings;
 use DigitalSilk\WcImport\Hooks\ScheduleImport;
 use DigitalSilk\WcImport\ProductImporter;
 use DigitalSilk\WcImport\ProductImporterInterface;
+use Psr\Log\LoggerInterface;
 
 return function (string $modDir): array {
     return [
         'digitalsilk/wc-import/is_debug' => new Value(false),
         'digitalsilk/wc-import/batch_size' => new Value(3),
-        'digitalsilk/wc-import/logging/wc_logger' => new Factory([], fn() => wc_get_logger()),
         'digitalsilk/wc-import/logging/import_log_name' => new Value('digitalsilk-wc-import'),
         'digitalsilk/wc-import/logging/import_logger' => new Factory([
-            'digitalsilk/wc-import/logging/wc_logger',
             'digitalsilk/wc-import/logging/import_log_name',
-        ], function (WC_Logger_Interface $logger, string $logName): WC_Logger_Interface {
-            return new CustomContextLogger($logger, [
+        ], function (string $logName): LoggerInterface {
+            return new CustomContextLogger([
                 'source' => $logName,
             ]);
         }),
