@@ -20,6 +20,7 @@ Intended to pass a DigitalSilk test.
    3. Spin it up with `docker compose up wp_dev`, ensuring the procedure is complete:
       the DB, webserver, WP, etc. should be automatically set up.
 3. Visit the [local site](http://localhost), and ensure it is ready (WC setup, etc).
+    The admin credentials are `admin`/`admin`.
 4. To test a distributable version of the plugin, build it by running
    `docker compose run --rm build make release`. Find the dist archive in `build/release`.
 
