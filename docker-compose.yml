@@ -15,6 +15,8 @@ services:
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         DOCROOT_PATH: $DOCROOT_PATH
         WP_DOMAIN: ${WP_DOMAIN}
+        USERID: ${USERID}
+        GROUPID: ${GROUPID}
     container_name: "${PROJECT_NAME}_wp_dev"
     depends_on:
       - db
@@ -87,6 +89,8 @@ services:
         NODE_VERSION: $NODE_VERSION
         BUILD_ROOT_PATH: $BUILD_ROOT_PATH
         PHP_MEMORY_LIMIT: $PHP_MEMORY_LIMIT
+        USERID: ${USERID}
+        GROUPID: ${GROUPID}
     container_name: "${PROJECT_NAME}_build"
     working_dir: ${BUILD_ROOT_PATH}
     volumes:
@@ -104,6 +108,8 @@ services:
         WORDPRESS_VERSION: $WORDPRESS_VERSION
         NODE_VERSION: $NODE_VERSION
         PHP_MEMORY_LIMIT: $PHP_MEMORY_LIMIT
+        USERID: ${USERID}
+        GROUPID: ${GROUPID}
     container_name: "${PROJECT_NAME}_test"
     working_dir: ${BUILD_ROOT_PATH}
     volumes:
