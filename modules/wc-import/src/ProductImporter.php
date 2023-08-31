@@ -68,7 +68,13 @@ class ProductImporter implements ProductImporterInterface
         // Other
         $wcProduct->set_name($product->getTitle());
         $wcProduct->set_short_description($product->getDescription());
-        $wcProduct->set_stock_quantity($product->getStock());
+
+        // Stock
+        $stockQty = $product->getStock();
+        if ($stockQty > 0) {
+            $wcProduct->set_stock_quantity($stockQty);
+            $wcProduct->set_manage_stock(true);
+        }
 
 
         // Extra
