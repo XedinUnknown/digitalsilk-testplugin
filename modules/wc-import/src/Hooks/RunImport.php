@@ -100,9 +100,12 @@ class RunImport
 
             ++$successfulCount;
 
-            $logger->notice(
-                sprintf('Imported product "%1$s" with ID #%2$d', $wcProduct->get_name(), $wcProduct->get_id())
-            );
+            $logger->notice(sprintf(
+                'Imported product #%3$d "%1$s" with ID #%2$d',
+                $wcProduct->get_name(),
+                $wcProduct->get_id(),
+                $successfulCount
+            ));
 
             if ($processedCount === $importLimit) {
                 $logger->warning(sprintf('Import limit of %1$d items reached; stopping', $importLimit));
