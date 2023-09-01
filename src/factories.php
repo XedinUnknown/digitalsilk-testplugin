@@ -15,6 +15,7 @@ use WpOop\WordPress\Plugin\PluginInterface;
 return function (): array {
     return [
         'digitalsilk/testplugin/is_debug' => new Value(WP_DEBUG),
+        'digitalsilk/testplugin/execution_timeout' => new Value(ini_get('max_execution_time')),
         'digitalsilk/testplugin/plugin' => new Factory([
             'wordpress/plugin_factory',
             'digitalsilk/testplugin/main_file_path',
@@ -43,6 +44,7 @@ return function (): array {
         'digitalsilk/dummyjson/api/auth/password' => new Alias('digitalsilk/wc-import/dummyjson/password'),
 
         'digitalsilk/wc-import/is_debug' => new Alias('digitalsilk/testplugin/is_debug'),
-        'digitalsilk/wc-import/list_products_command' => new Alias('digitalsilk/dummyjson/api/command/products/list')
+        'digitalsilk/wc-import/list_products_command' => new Alias('digitalsilk/dummyjson/api/command/products/list'),
+        'digitalsilk/wc-import/product_execution_timeout' => new Alias('digitalsilk/testplugin/execution_timeout'),
     ];
 };

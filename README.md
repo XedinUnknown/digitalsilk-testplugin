@@ -37,9 +37,12 @@ the _Username_ and _Password_ settings must be configured with respective [user 
 Press the _Import Now!_ button to schedule an import for executing ASAP in the background.
 
 > **Important**: The speed and amount of products that can be imported in one batch
-> greatly depends on the resources available on the server. If import fails consistently,
-> please try adjusting the importing options explained below. For a basic server with a 30s timeout,
-> 10 products per batch seems to work OK, as each product takes a few seconds.
+> greatly depends on the resources available on the server. For this reason, each product
+> has a certain amount of time to be imported, after which the execution timeout resets.
+> Theoretically, this should allow any number of products to be imported in one batch.
+> 
+> This is independent of the execution timeout of the rest of the script, but requires
+> PHP to be able to set INI values with `ini_set()`
 
 During import, the plugin will access the products endpoint of the API, and attempt to use its data
 to create new products. The specification explicitly says to leave out the `id` field while importing,

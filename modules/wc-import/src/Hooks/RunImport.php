@@ -25,9 +25,11 @@ class RunImport
     protected LoggerInterface $logger;
     /** @var ScheduleHook */
     protected $scheduleHook;
+    protected int $productExecutionTimeout;
 
     /**
      * @param ScheduleHook $scheduleHook Will be invoked after this batch if API reports more items.
+     * @param non-negative-int $productExecutionTimeout The execution timeout to set per product, in seconds.
      */
     public function __construct(
         bool $isDebug,
@@ -36,7 +38,8 @@ class RunImport
         int $batchSize,
         int $importLimit,
         LoggerInterface $logger,
-        callable $scheduleHook
+        callable $scheduleHook,
+        int $productExecutionTimeout
     ) {
         $this->isDebug = $isDebug;
         $this->listCommand = $listCommand;
@@ -45,6 +48,7 @@ class RunImport
         $this->importLimit = $importLimit;
         $this->logger = $logger;
         $this->scheduleHook = $scheduleHook;
+        $this->productExecutionTimeout = $productExecutionTimeout;
     }
 
     /**
@@ -84,6 +88,8 @@ class RunImport
         foreach ($products as $product) {
             ++$i;
             ++$processedCount;
+
+            $this->resetExecutionTimeout($this->productExecutionTimeout);
 
             try {
                 $wcProduct = $importer->importProduct($product);
@@ -127,5 +133,15 @@ class RunImport
         }
 
         $logger->info('Nothing more to do');
+    }
+
+    /**
+     * Sets execution timeout, and resets the timer.
+     *
+     * @param non-negative-int $timeout The timeout, in seconds.
+     */
+    protected function resetExecutionTimeout(int $timeout): void
+    {
+        ini_set('max_execution_time', (string) $timeout);
     }
 }

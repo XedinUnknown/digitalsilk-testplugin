@@ -24,6 +24,7 @@ return function (string $modDir): array {
         'digitalsilk/wc-import/is_debug' => new Value(false),
         'digitalsilk/wc-import/batch_size' => new Value(10),
         'digitalsilk/wc-import/import_limit' => new Value(0),
+        'digitalsilk/wc-import/product_execution_timeout' => new Value(60),
         'digitalsilk/wc-import/logging/import_log_name' => new Value('digitalsilk-wc-import'),
         'digitalsilk/wc-import/logging/import_logger' => new Factory([
             'digitalsilk/wc-import/logging/import_log_name',
@@ -83,6 +84,7 @@ return function (string $modDir): array {
                 'digitalsilk/wc-import/import_limit',
                 'digitalsilk/wc-import/logging/import_logger',
                 'digitalsilk/wc-import/hooks/schedule_immediate_import',
+                'digitalsilk/wc-import/product_execution_timeout',
             ],
             /**
              * @param numeric $batchSize
@@ -95,10 +97,21 @@ return function (string $modDir): array {
                 $batchSize,
                 $importLimit,
                 LoggerInterface $logger,
-                ScheduleImport $scheduleImportHook
+                ScheduleImport $scheduleImportHook,
+                $productExecutionTimeout
             ): RunImport {
                 $batchSize = intval($batchSize);
                 $importLimit = intval($importLimit);
+
+                $productExecutionTimeout = intval($productExecutionTimeout);
+                if ($productExecutionTimeout < 0) {
+                    throw new InvalidArgumentException(
+                        sprintf(
+                            'Execution timeout must be a non-negative integer; "%1$s" received',
+                            $productExecutionTimeout
+                        )
+                    );
+                }
 
                 return new RunImport(
                     $isDebug,
@@ -107,7 +120,8 @@ return function (string $modDir): array {
                     $batchSize,
                     $importLimit,
                     $logger,
-                    $scheduleImportHook
+                    $scheduleImportHook,
+                    $productExecutionTimeout
                 );
             }
         ),
