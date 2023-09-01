@@ -104,7 +104,7 @@ class RunImport
                 'Imported product #%3$d "%1$s" with ID #%2$d',
                 $wcProduct->get_name(),
                 $wcProduct->get_id(),
-                $successfulCount
+                $processedCount
             ));
 
             if ($processedCount === $importLimit) {
