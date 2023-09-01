@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [[*next-version*]] - YYYY-MM-DD
+
+## [0.1.0-alpha2] - 2023-09-01
 ### Fixed
 - Inability to import images and write to log.
 - Larger batches causing execution timeout.
