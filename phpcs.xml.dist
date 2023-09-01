@@ -39,8 +39,8 @@
                 <!-- Constructor is first, then all public methods, then protected/private methods and magic methods are last -->
                 <element value="constructor"/>
                 <element value="all public methods"/>
-                <element value="methods"/>
                 <element value="magic methods"/>
+                <element value="methods"/>
             </property>
         </properties>
     </rule>
