@@ -89,6 +89,7 @@ return function (string $modDir): array {
             /**
              * @param numeric $batchSize
              * @param numeric $importLimit
+             * @param numeric $productExecutionTimeout
              */
             function (
                 bool $isDebug,

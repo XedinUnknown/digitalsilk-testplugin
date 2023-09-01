@@ -25,6 +25,7 @@ class RunImport
     protected LoggerInterface $logger;
     /** @var ScheduleHook */
     protected $scheduleHook;
+    /** @var non-negative-int */
     protected int $productExecutionTimeout;
 
     /**
