@@ -82,6 +82,9 @@ class RunImport
         $i = 0; // Processed in this batch
         $successfulCount = 0; // Imported successfully
         foreach ($products as $product) {
+            ++$i;
+            ++$processedCount;
+
             try {
                 $wcProduct = $importer->importProduct($product);
             } catch (Exception $e) {
@@ -89,8 +92,6 @@ class RunImport
                 continue;
             }
 
-            ++$i;
-            ++$processedCount;
             ++$successfulCount;
 
             $logger->notice(
