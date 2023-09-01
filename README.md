@@ -8,8 +8,8 @@ Intended to pass a DigitalSilk test.
 
 ## Requirements
 - PHP >= 7.4;
-- WordPress >= 6;
-- WooCommerce >= 7;
+- WordPress >= 6.1;
+- WooCommerce >= 7.9;
 
 ## Setup From Source
 0. Ensure you have a working Docker setup with Docker Compose.

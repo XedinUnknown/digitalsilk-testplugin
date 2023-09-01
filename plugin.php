@@ -12,8 +12,9 @@
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: digitalsilk-testplugin
  * Domain Path: /languages
- * Requires at least: 6.0
+ * Requires at least: 6.1
  * Requires PHP: 7.4
+ * WC requires at least: 7.9
  */
 
 use Dhii\Container\Dictionary;

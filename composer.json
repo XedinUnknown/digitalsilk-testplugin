@@ -28,7 +28,7 @@
     "vimeo/psalm": "^5.0",
     "slevomat/coding-standard": "^6.0",
     "webmozart/path-util": "^2.3@stable",
-    "php-stubs/wordpress-stubs": "6.0.x@stable"
+    "php-stubs/wordpress-stubs": "6.1.x@stable"
   },
   "autoload": {
     "psr-4": {

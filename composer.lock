@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ee4ae487cc4d689d5eb6d38e70b149a",
+    "content-hash": "2125922fd2f56804588d772a822ffe44",
     "packages": [
         {
             "name": "container-interop/service-provider",
@@ -1108,12 +1108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-oop/containers.git",
-                "reference": "8b7061b808b9610d116182d6353a3a79eba55d82"
+                "reference": "645b3c94d05c3fac58e7c17b5b042e43b318c44c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-oop/containers/zipball/8b7061b808b9610d116182d6353a3a79eba55d82",
-                "reference": "8b7061b808b9610d116182d6353a3a79eba55d82",
+                "url": "https://api.github.com/repos/wp-oop/containers/zipball/645b3c94d05c3fac58e7c17b5b042e43b318c44c",
+                "reference": "645b3c94d05c3fac58e7c17b5b042e43b318c44c",
                 "shasum": ""
             },
             "require": {
@@ -1162,7 +1162,7 @@
                 "issues": "https://github.com/wp-oop/containers/issues",
                 "source": "https://github.com/wp-oop/containers/tree/0.1.x"
             },
-            "time": "2022-01-06T11:25:24+00:00"
+            "time": "2023-09-01T07:55:01+00:00"
         },
         {
             "name": "wp-oop/http-client",
@@ -1838,12 +1838,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
-                "reference": "4bff79ddd77851fe3cdd11616ed3f92841ba5bd2"
+                "reference": "73b47b99f928364693ab1f48480c949186283e82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/4bff79ddd77851fe3cdd11616ed3f92841ba5bd2",
-                "reference": "4bff79ddd77851fe3cdd11616ed3f92841ba5bd2",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/73b47b99f928364693ab1f48480c949186283e82",
+                "reference": "73b47b99f928364693ab1f48480c949186283e82",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/pcre/issues",
-                "source": "https://github.com/composer/pcre/tree/3.1.0"
+                "source": "https://github.com/composer/pcre/tree/main"
             },
             "funding": [
                 {
@@ -1902,7 +1902,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-17T09:50:14+00:00"
+            "time": "2023-09-01T08:40:22+00:00"
         },
         {
             "name": "composer/semver",
@@ -2869,16 +2869,16 @@
         },
         {
             "name": "php-stubs/wordpress-stubs",
-            "version": "v6.0.4",
+            "version": "v6.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-stubs/wordpress-stubs.git",
-                "reference": "c10ca821b585cbadba1a0c98cf2faf8b2def55eb"
+                "reference": "f4281289efaf5e43afc102a475c39d1730e5d91c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/c10ca821b585cbadba1a0c98cf2faf8b2def55eb",
-                "reference": "c10ca821b585cbadba1a0c98cf2faf8b2def55eb",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/f4281289efaf5e43afc102a475c39d1730e5d91c",
+                "reference": "f4281289efaf5e43afc102a475c39d1730e5d91c",
                 "shasum": ""
             },
             "require-dev": {
@@ -2908,9 +2908,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-stubs/wordpress-stubs/issues",
-                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.0.4"
+                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.1.2"
             },
-            "time": "2023-05-18T04:34:47+00:00"
+            "time": "2023-05-18T04:35:09+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3136,12 +3136,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "fe53daa0f3542d22cff8336de5d15ba1213ea66f"
+                "reference": "c200592b186c964234846932371888cba15212dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/fe53daa0f3542d22cff8336de5d15ba1213ea66f",
-                "reference": "fe53daa0f3542d22cff8336de5d15ba1213ea66f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c200592b186c964234846932371888cba15212dc",
+                "reference": "c200592b186c964234846932371888cba15212dc",
                 "shasum": ""
             },
             "require": {
@@ -3206,7 +3206,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-30T13:01:43+00:00"
+            "time": "2023-09-01T09:01:18+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3455,12 +3455,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c7e801e2751a879f3c28aca102a4f4e44a773748"
+                "reference": "4d27ad9c17bb52256ac8274de593663611c4da2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c7e801e2751a879f3c28aca102a4f4e44a773748",
-                "reference": "c7e801e2751a879f3c28aca102a4f4e44a773748",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4d27ad9c17bb52256ac8274de593663611c4da2e",
+                "reference": "4d27ad9c17bb52256ac8274de593663611c4da2e",
                 "shasum": ""
             },
             "require": {
@@ -3550,7 +3550,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-08-30T12:23:08+00:00"
+            "time": "2023-09-01T04:34:23+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -5568,12 +5568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "cc7ed9586ee82bfe758318ace243c9f1c6f530eb"
+                "reference": "c0599975c6ea890eef4cc7f2cbbe4340dc530d68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/cc7ed9586ee82bfe758318ace243c9f1c6f530eb",
-                "reference": "cc7ed9586ee82bfe758318ace243c9f1c6f530eb",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/c0599975c6ea890eef4cc7f2cbbe4340dc530d68",
+                "reference": "c0599975c6ea890eef4cc7f2cbbe4340dc530d68",
                 "shasum": ""
             },
             "require": {
@@ -5670,7 +5670,7 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm/tree/5.x"
             },
-            "time": "2023-08-28T10:06:45+00:00"
+            "time": "2023-08-31T21:34:29+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5805,7 +5805,9 @@
     "stability-flags": {
         "webmozart/path-util": 0,
         "php-stubs/wordpress-stubs": 0,
-        "ancarda/psr7-string-stream": 20
+        "ancarda/psr7-string-stream": 20,
+        "wpackagist-plugin/woocommerce": 0,
+        "php-stubs/woocommerce-stubs": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -5816,5 +5818,5 @@
     "platform-dev": {
         "ext-json": "*"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
